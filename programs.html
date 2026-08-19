@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Programs & Activities | Vertex Education – Coaching Classes Chandkheda Ahmedabad</title>
+<meta name="description" content="Vertex Education programs — Science Fair, Maths Olympiad, Career Counseling, Felicitation Ceremony, Parent Meetings and more. Coaching in Chandkheda, Ahmedabad."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* ACTIVITY GRID */
+.ag{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;}
+@media(max-width:860px){.ag{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.ag{grid-template-columns:1fr;}}
+.ac{background:var(--bg2);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;transition:border-color .22s,transform .28s;position:relative;}
+.ac:hover{border-color:var(--bdr2);transform:translateY(-5px);}
+.ac.wide{grid-column:span 2;}
+@media(max-width:860px){.ac.wide{grid-column:span 1;}}
+.ac-ph{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.4rem;position:relative;overflow:hidden;}
+.ac-ph::before{content:'';position:absolute;inset:0;background:inherit;filter:blur(0);}
+.ac-ph .ph-ic{font-size:2.5rem;position:relative;z-index:1;}
+.ac-ph .ph-lb{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.35);position:relative;z-index:1;text-align:center;line-height:1.4;padding:0 1rem;}
+.ac-body{padding:1.3rem 1.5rem 1.5rem;}
+.ac-cat{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .62rem;border-radius:50px;margin-bottom:.6rem;}
+.ac-title{font-size:1.05rem;font-weight:800;margin-bottom:.35rem;letter-spacing:-.02em;}
+.ac-desc{font-size:.82rem;color:var(--off);line-height:1.65;margin-bottom:.75rem;}
+.ac-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
+.ac-tag{background:rgba(255,255,255,.06);border:1px solid var(--bdr);border-radius:50px;padding:.18rem .6rem;font-size:.7rem;font-weight:600;color:var(--muted);}
+
+/* PTM SECTION */
+.ptm{background:var(--bg2);border:1px solid var(--bdr);border-radius:20px;padding:3rem;margin:4rem 0;position:relative;overflow:hidden;}
+.ptm::before{content:'';position:absolute;right:-4rem;top:-4rem;width:220px;height:220px;border-radius:50%;background:rgba(79,142,247,.05);}
+.ptm-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+@media(max-width:700px){.ptm-grid{grid-template-columns:1fr;gap:1.8rem;}}
+.ptm-feats{display:flex;flex-direction:column;gap:.8rem;}
+.pf{display:flex;align-items:flex-start;gap:.8rem;background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:12px;padding:.95rem;transition:border-color .18s;}
+.pf:hover{border-color:var(--bdr2);}
+.pf-ic{font-size:1.2rem;flex-shrink:0;margin-top:.05rem;}
+.pf-t{font-weight:700;font-size:.88rem;margin-bottom:.15rem;}
+.pf-d{font-size:.78rem;color:var(--off);line-height:1.55;}
+
+/* PROGRAM CALENDAR */
+.cal{display:flex;flex-direction:column;gap:0;max-width:680px;margin:2.5rem auto 0;}
+.cal-item{display:grid;grid-template-columns:90px 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--bdr);align-items:start;}
+.cal-item:last-child{border-bottom:none;}
+.cal-month{font-family:'Instrument Serif',serif;font-size:1.1rem;font-weight:400;color:var(--blue);text-align:center;background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.15);border-radius:10px;padding:.5rem .7rem;line-height:1.2;}
+.cal-month small{display:block;font-family:'Inter',sans-serif;font-size:.62rem;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:.1rem;}
+.cal-t{font-weight:700;font-size:.95rem;margin-bottom:.22rem;}
+.cal-d{font-size:.82rem;color:var(--off);line-height:1.65;}
+.cal-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem;}
+.cal-tag{font-size:.68rem;font-weight:700;padding:.16rem .55rem;border-radius:50px;background:rgba(244,180,0,.1);color:var(--gold);}
+
+/* GALLERY MASONRY */
+.masonry{columns:3;column-gap:.9rem;}
+@media(max-width:700px){.masonry{columns:2;}}
+@media(max-width:460px){.masonry{columns:1;}}
+.mi-g{break-inside:avoid;margin-bottom:.9rem;border-radius:14px;overflow:hidden;border:1px solid var(--bdr);position:relative;}
+.mi-g .ph-div{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.35rem;}
+.mi-g .ph-div span{font-size:2rem;}
+.mi-g .ph-div p{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.3);}
+.mi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 55%);opacity:0;transition:opacity .28s;display:flex;align-items:flex-end;padding:.9rem;}
+.mi-g:hover .mi-ov{opacity:1;}
+.mi-ov span{color:var(--w);font-weight:700;font-size:.82rem;}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur-r"></div><div id="spb"></div>
+<a href="https://wa.me/919000000000" class="wa-fl" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="nav">
+  <a href="index.html" class="n-logo"><div class="lb" style="width:27px;height:27px;border-radius:7px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><span>Vertex <span class="gd">Education</span></span></a>
+  <ul class="n-links" id="nl">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="batches.html">Batches</a></li><li><a href="experiments.html">Experiments</a></li>
+    <li><a href="programs.html" class="act">Programs</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="n-r" id="nr"><a href="contact.html" class="btn-g">Free Demo</a><a href="contact.html" class="btn-w">Enroll Now</a></div>
+  <button class="burger" id="bg"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="ph">
+  <div class="ph-grid"></div><div class="ph-glow" style="left:20%"></div>
+  <div class="ph-content">
+    <div class="pill rv"><div class="dot"></div>Beyond the Classroom</div>
+    <h1 class="sh rv d1" style="font-size:clamp(2.2rem,5vw,4rem)">Programs &amp; activities<br>that make learning <em>memorable.</em></h1>
+    <p class="sp rv d2" style="margin-bottom:0">Science fairs, olympiad prep, career days, felicitation ceremonies — at Vertex, education is a rich experience, not just exam preparation.</p>
+  </div>
+</div>
+
+<div class="mq"><div class="mq-t">
+  <span class="mi">Science Fair <span class="md">✦</span></span><span class="mi">Maths Olympiad <span class="md">✦</span></span><span class="mi">Career Counseling Day <span class="md">✦</span></span><span class="mi">Felicitation Ceremony <span class="md">✦</span></span><span class="mi">Parent Meetings <span class="md">✦</span></span><span class="mi">Mock Test Series <span class="md">✦</span></span><span class="mi">Concept Activities <span class="md">✦</span></span><span class="mi">Study Trips <span class="md">✦</span></span>
+  <span class="mi">Science Fair <span class="md">✦</span></span><span class="mi">Maths Olympiad <span class="md">✦</span></span><span class="mi">Career Counseling Day <span class="md">✦</span></span><span class="mi">Felicitation Ceremony <span class="md">✦</span></span><span class="mi">Parent Meetings <span class="md">✦</span></span><span class="mi">Mock Test Series <span class="md">✦</span></span>
+</div></div>
+
+<!-- ACTIVITIES -->
+<section class="sec">
+  <span class="ol rv">Concept Activities</span>
+  <h2 class="sh rv d1">Activities that teach<br>through <em>experience.</em></h2>
+  <p class="sp rv d2">The best way to understand a concept is to live it. These activities make abstract topics concrete and unforgettable for every student.</p>
+
+  <div class="ag">
+    <!-- FEATURED -->
+    <div class="ac wide rv">
+      <div class="ac-ph" style="background:linear-gradient(135deg,#0a0f2e,#152060)">
+        <!-- <img src="programs/science-fair.jpg" class="ac-img" alt="Annual Science Fair"> -->
+        <div class="ph-ic">🔬</div>
+        <div class="ph-lb">Annual Science Fair — Add your photo here<br><span style="font-size:.65rem;color:rgba(255,255,255,.2)">Upload: programs/science-fair.jpg</span></div>
+      </div>
+      <div class="ac-body">
+        <div class="ac-cat" style="background:rgba(79,142,247,.1);color:var(--blue)">🏆 Annual Event</div>
+        <div class="ac-title">Annual Science Fair &amp; Exhibition</div>
+        <div class="ac-desc">Students from all classes showcase their understanding of scientific concepts through working models, charts, and live demonstrations. Parents are invited to witness their children's creativity and scientific thinking in action.</div>
+        <div class="ac-tags"><span class="ac-tag">All Classes</span><span class="ac-tag">Science</span><span class="ac-tag">Parents Invited</span><span class="ac-tag">Awards</span></div>
+      </div>
+    </div>
+
+    <div class="ac rv d1">
+      <div class="ac-ph" style="background:linear-gradient(135deg,#1a1000,#3d2800)">
+        <!-- <img src="programs/maths-olympiad.jpg" alt="Maths Olympiad"> -->
+        <div class="ph-ic">🧮</div><div class="ph-lb">Maths Olympiad — Add photo</div>
+      </div>
+      <div class="ac-body">
+        <div class="ac-cat" style="background:rgba(244,180,0,.1);color:var(--gold)">🥇 Competition</div>
+        <div class="ac-title">Maths Olympiad Preparation</div>
+        <div class="ac-desc">In-house olympiad workshops preparing students for IMO, NTSE, and school-level competitions with practice sets and speed-solving sessions.</div>
+        <div class="ac-tags"><span class="ac-tag">Class 6–10</span><span class="ac-tag">Maths</span><span class="ac-tag">Olympiad</span></div>
+      </div>
+    </div>
+
+    <div class="ac rv d2">
+      <div class="ac-ph" style="background:linear-gradient(135deg,#001a0d,#003320)">
+        <!-- <img src="programs/concept-activity.jpg" alt="Concept Activity"> -->
+        <div class="ph-ic">🌱</div><div class="ph-lb">Concept Activity — Add photo</div>
+      </div>
+      <div class="ac-body">
+        <div class="ac-cat" style="background:rgba(34,197,94,.08);color:var(--grn)">🎯 Monthly</div>
+        <div class="ac-title">Concept Through Activity</div>
+        <div class="ac-desc">Each month we teach one difficult concept through a hands-on activity — no textbooks, just materials, actions, and discovery. Students remember these for years.</div>
+        <div class="ac-tags"><span class="ac-tag">All Classes</span><span class="ac-tag">Hands-On</span><span class="ac-tag">Monthly</span></div>
+      </div>
+    </div>
+
+    <div class="ac rv">
+      <div class="ac-ph" style="background:linear-gradient(135deg,#1a0028,#350050)">
+        <!-- <img src="programs/career-day.jpg" alt="Career Counseling Day"> -->
+        <div class="ph-ic">🗣️</div><div class="ph-lb">Career Day — Add photo</div>
+      </div>
+      <div class="ac-body">
+        <div class="ac-cat" style="background:rgba(168,85,247,.08);color:#a855f7">🚀 Career</div>
+        <div class="ac-title">Career Counseling Day</div>
+        <div class="ac-desc">Expert sessions exploring different career paths — medicine, engineering, commerce, design — helping students make informed stream choices.</div>
+        <div class="ac-tags"><span class="ac-tag">Class 9–12</span><span class="ac-tag">Career</span><span class="ac-tag">Guest Speakers</span></div>
+      </div>
+    </div>
+
+    <div class="ac wide rv d1">
+      <div class="ac-ph" style="background:linear-gradient(135deg,#1a0000,#3d0000)">
+        <!-- <img src="programs/felicitation.jpg" alt="Felicitation Ceremony"> -->
+        <div class="ph-ic">🎖️</div>
+        <div class="ph-lb">Felicitation Ceremony — Add your photo<br><span style="font-size:.65rem;color:rgba(255,255,255,.2)">Upload: programs/felicitation.jpg</span></div>
+      </div>
+      <div class="ac-body">
+        <div class="ac-cat" style="background:rgba(239,68,68,.08);color:#ef4444">🏅 Annual Celebration</div>
+        <div class="ac-title">Annual Student Felicitation Ceremony</div>
+        <div class="ac-desc">Our biggest event — we celebrate every student who achieves their milestone, whether it's a board result, competitive exam success, or consistent academic improvement. Parents, students, and faculty come together to honor achievements and inspire the next batch.</div>
+        <div class="ac-tags"><span class="ac-tag">All Students</span><span class="ac-tag">Annual Event</span><span class="ac-tag">Parents Welcome</span><span class="ac-tag">Awards &amp; Certificates</span></div>
+      </div>
+    </div>
+
+    <div class="ac rv d2">
+      <div class="ac-ph" style="background:linear-gradient(135deg,#00101a,#002540)">
+        <!-- <img src="programs/mock-test.jpg" alt="Mock Test Series"> -->
+        <div class="ph-ic">📝</div><div class="ph-lb">Mock Test Day — Add photo</div>
+      </div>
+      <div class="ac-body">
+        <div class="ac-cat" style="background:rgba(14,165,233,.08);color:#38bdf8">📊 Monthly</div>
+        <div class="ac-title">Monthly Full Mock Test Series</div>
+        <div class="ac-desc">Exam-condition tests held every month. Students experience full board/entrance exam pressure to build confidence well before the actual exam.</div>
+        <div class="ac-tags"><span class="ac-tag">All Classes</span><span class="ac-tag">All Boards</span><span class="ac-tag">Monthly</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- PARENT MEETINGS -->
+<section class="sec blk">
+  <div class="ptm rv">
+    <div class="ptm-grid">
+      <div>
+        <span class="ol">Parent Partnership</span>
+        <h2 class="sh" style="margin-bottom:.8rem">Regular Parent–<br>Teacher <em>Meetings.</em></h2>
+        <p style="font-size:.88rem;color:var(--off);line-height:1.8;margin-bottom:1.5rem">We hold structured monthly PTMs so you are never out of the loop. Education is a three-way partnership — between the student, the teacher, and the parent.</p>
+        <a href="contact.html" class="btn-p">Schedule a Meeting →</a>
+      </div>
+      <div class="ptm-feats">
+        <div class="pf"><div class="pf-ic">📊</div><div><div class="pf-t">Detailed Progress Reports</div><div class="pf-d">Subject-wise scores, attendance, and improvement areas shared every month.</div></div></div>
+        <div class="pf"><div class="pf-ic">🎯</div><div><div class="pf-t">Individual Attention Review</div><div class="pf-d">Teachers discuss each student's strengths, challenges, and personalized next steps.</div></div></div>
+        <div class="pf"><div class="pf-ic">📅</div><div><div class="pf-t">Every Last Saturday</div><div class="pf-d">Monthly schedule. Sunday counseling available for working parents by appointment.</div></div></div>
+        <div class="pf"><div class="pf-ic">📱</div><div><div class="pf-t">WhatsApp Updates</div><div class="pf-d">Test results and urgent updates shared on WhatsApp within 24 hours.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- PROGRAM CALENDAR -->
+<section class="sec" style="text-align:center">
+  <span class="ol rv" style="display:block">Program Calendar</span>
+  <h2 class="sh rv d1" style="text-align:center">What happens throughout<br>the <em>academic year.</em></h2>
+  <div class="cal" style="text-align:left">
+    <div class="cal-item rv"><div class="cal-month">JUN<small>July</small></div><div><div class="cal-t">New Batch Orientation</div><div class="cal-d">Welcome session for new students and parents. Faculty intro, schedule sharing, study material distribution, goal-setting.</div><div class="cal-tags"><span class="cal-tag">All Students</span><span class="cal-tag">Parents Invited</span></div></div></div>
+    <div class="cal-item rv d1"><div class="cal-month">AUG<small>August</small></div><div><div class="cal-t">Science Activity Month</div><div class="cal-d">Dedicated month for hands-on science activities. Concept-through-activity sessions for each class. Science fair model building begins.</div><div class="cal-tags"><span class="cal-tag">Class 6–12</span><span class="cal-tag">Science</span></div></div></div>
+    <div class="cal-item rv"><div class="cal-month">SEP<small>September</small></div><div><div class="cal-t">First Term Exam Prep + Mock Tests</div><div class="cal-d">Intensive revision sessions, full-length mock tests, and doubt-solving marathons for first term board exams.</div><div class="cal-tags"><span class="cal-tag">All Classes</span><span class="cal-tag">Mock Series</span></div></div></div>
+    <div class="cal-item rv d1"><div class="cal-month">NOV<small>November</small></div><div><div class="cal-t">Annual Science Fair</div><div class="cal-d">Students showcase working models and experiments to parents and faculty. Judges evaluate creativity, understanding, and presentation. Winners get certificates and prizes.</div><div class="cal-tags"><span class="cal-tag">All Students</span><span class="cal-tag">Parents Invited</span><span class="cal-tag">Awards</span></div></div></div>
+    <div class="cal-item rv"><div class="cal-month">DEC<small>December</small></div><div><div class="cal-t">Career Counseling Day</div><div class="cal-d">Special sessions for Class 10–12 on stream selection, JEE/NEET roadmap, and career options with guest expert speakers.</div><div class="cal-tags"><span class="cal-tag">Class 10–12</span><span class="cal-tag">Guest Speakers</span></div></div></div>
+    <div class="cal-item rv d1"><div class="cal-month">JAN<small>January</small></div><div><div class="cal-t">Board Exam Intensive Revision</div><div class="cal-d">Full-syllabus rapid revision, chapter-wise mock tests, and dedicated doubt-solving sessions twice a week for board students.</div><div class="cal-tags"><span class="cal-tag">Class 10 &amp; 12</span><span class="cal-tag">All Boards</span></div></div></div>
+    <div class="cal-item rv"><div class="cal-month">MAY<small>May</small></div><div><div class="cal-t">Annual Felicitation Ceremony</div><div class="cal-d">Grand celebration of student achievements. Board toppers, competitive exam qualifiers, and most-improved students honored in front of family and peers.</div><div class="cal-tags"><span class="cal-tag">All Students</span><span class="cal-tag">Parents Welcome</span><span class="cal-tag">Annual Highlight</span></div></div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- GALLERY -->
+<section class="sec blk">
+  <span class="ol rv">Memories</span>
+  <h2 class="sh rv d1">Glimpses from our<br><em>programs &amp; events.</em></h2>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.5rem;background:rgba(244,180,0,.06);border:1px solid rgba(244,180,0,.15);border-radius:10px;padding:.75rem 1rem;display:inline-block" class="rv d2">
+    📸 Add your event photos: upload to <code style="background:rgba(255,255,255,.08);border-radius:4px;padding:.1rem .35rem;font-size:.8rem;color:var(--blue)">programs/</code> folder on Netlify/Hostinger and update the src below.
+  </p>
+  <div class="masonry">
+    <div class="mi-g rv"><div class="ph-div" style="background:linear-gradient(135deg,#0a0f2e,#152060);aspect-ratio:4/3"><span>🔬</span><p>Science Fair</p></div><div class="mi-ov"><span>Annual Science Fair</span></div></div>
+    <div class="mi-g rv d1"><div class="ph-div" style="background:linear-gradient(135deg,#1a1000,#3d2800);aspect-ratio:3/4"><span>🧮</span><p>Maths Olympiad</p></div><div class="mi-ov"><span>Maths Olympiad</span></div></div>
+    <div class="mi-g rv d2"><div class="ph-div" style="background:linear-gradient(135deg,#001a0d,#003320);aspect-ratio:1/1"><span>🌱</span><p>Concept Activity</p></div><div class="mi-ov"><span>Concept Activity</span></div></div>
+    <div class="mi-g rv"><div class="ph-div" style="background:linear-gradient(135deg,#1a0000,#3d0000);aspect-ratio:4/3"><span>🎖️</span><p>Felicitation</p></div><div class="mi-ov"><span>Felicitation Ceremony</span></div></div>
+    <div class="mi-g rv d1"><div class="ph-div" style="background:linear-gradient(135deg,#1a0028,#350050);aspect-ratio:3/4"><span>👪</span><p>Parent Meeting</p></div><div class="mi-ov"><span>Parent–Teacher Meeting</span></div></div>
+    <div class="mi-g rv d2"><div class="ph-div" style="background:linear-gradient(135deg,#00101a,#002540);aspect-ratio:4/3"><span>📝</span><p>Mock Test Day</p></div><div class="mi-ov"><span>Mock Test Series</span></div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<section class="sec" style="text-align:center">
+  <h2 class="sh rv d1" style="text-align:center">Want your child to be<br>part of <em>all this?</em></h2>
+  <p style="color:var(--off);font-size:.9rem;margin-bottom:1.5rem;max-width:400px;margin-left:auto;margin-right:auto" class="rv d2">Enroll today and join a learning community that goes far beyond textbooks.</p>
+  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap" class="rv d3">
+    <a href="contact.html" class="btn-p">Enroll Now →</a>
+    <a href="batches.html" class="btn-o">View Batches</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-glow"></div>
+  <div class="ft-grid">
+    <div class="ft-brand"><div style="display:flex;align-items:center;gap:.5rem;font-size:.98rem;font-weight:700"><div style="width:25px;height:25px;border-radius:6px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Vertex <span style="color:var(--gold)">Education</span></div><p>Best coaching in Chandkheda, Ahmedabad. CBSE, GSEB, ICSE, JEE &amp; NEET since 2014.</p><div class="addr">G-17, Omkar Lotus, Motera Road,<br>Chandkheda, Ahmedabad 382424</div></div>
+    <div class="ft-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="batches.html">Batches</a></li><li><a href="experiments.html">Experiments</a></li><li><a href="programs.html">Programs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Programs</h4><ul><li><a href="#">Science Fair</a></li><li><a href="#">Maths Olympiad</a></li><li><a href="#">Felicitation</a></li><li><a href="#">Parent Meetings</a></li><li><a href="#">Career Counseling</a></li></ul></div>
+    <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:+919000000000">+91 90000 00000</a></li><li><a href="mailto:info@vertexeducation.in">Email Us</a></li><li><a href="https://wa.me/919000000000" target="_blank">WhatsApp</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span>© 2024 Vertex Education · Chandkheda, Ahmedabad</span><div class="srow"><a href="#" class="soc">f</a><a href="#" class="soc">in</a><a href="#" class="soc">▶</a><a href="#" class="soc">𝕏</a></div></div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

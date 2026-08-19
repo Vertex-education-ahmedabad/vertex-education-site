@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us | Vertex Education – Best Coaching Chandkheda Ahmedabad Since 2014</title>
+<meta name="description" content="Learn about Vertex Education — Chandkheda's most trusted coaching institute since 2014. Our story, mission, vision, 25+ expert faculty and 10 years of proven results."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* ABOUT-SPECIFIC */
+.story-split{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+@media(max-width:860px){.story-split{grid-template-columns:1fr;gap:2.5rem;}}
+.img-frame{border-radius:20px;overflow:hidden;border:1px solid var(--bdr);position:relative;}
+.img-frame img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .6s var(--ease);}
+.img-frame:hover img{transform:scale(1.03);}
+.img-ph{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#0d1a3a,#163580);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;}
+.img-ph span{font-size:3rem;}
+.img-ph p{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:500;text-align:center;line-height:1.6;}
+.img-badge{position:absolute;bottom:1.2rem;left:1.2rem;background:rgba(14,14,14,.9);backdrop-filter:blur(12px);border:1px solid var(--bdr2);border-radius:12px;padding:.8rem 1.1rem;display:flex;align-items:center;gap:.75rem;}
+.ab-n{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;color:var(--gold);line-height:1;}
+.ab-l{font-size:.72rem;color:var(--muted);line-height:1.45;}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:1.8rem;margin-top:1.5rem;}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--blue),rgba(244,180,0,.3));border-radius:1px;}
+.tl-item{position:relative;margin-bottom:2rem;}
+.tl-item::before{content:'';position:absolute;left:-2.18rem;top:.3rem;width:10px;height:10px;border-radius:50%;border:2px solid var(--blue);background:var(--bg);transition:background .2s;}
+.tl-item:hover::before{background:var(--blue);}
+.tl-yr{font-size:.68rem;font-weight:800;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.18rem;}
+.tl-t{font-weight:700;font-size:.96rem;margin-bottom:.22rem;}
+.tl-d{font-size:.83rem;color:var(--off);line-height:1.65;}
+
+/* MVV */
+.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;margin-top:3rem;}
+@media(max-width:700px){.mvv{grid-template-columns:1fr;}}
+.mvv-c{background:var(--bg2);padding:2rem;transition:background .2s;}
+.mvv-c:hover{background:var(--bg3);}
+.mvv-ic{font-size:1.6rem;margin-bottom:.8rem;}
+.mvv-t{font-size:1rem;font-weight:700;margin-bottom:.4rem;}
+.mvv-d{font-size:.84rem;color:var(--off);line-height:1.7;}
+
+/* VALUES */
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem;}
+@media(max-width:560px){.vals{grid-template-columns:1fr;}}
+.val-c{background:var(--bg2);border:1px solid var(--bdr);border-radius:14px;padding:1.2rem 1.4rem;display:flex;align-items:flex-start;gap:.9rem;transition:border-color .2s,transform .22s;}
+.val-c:hover{border-color:var(--bdr2);transform:translateY(-3px);}
+.val-ic{font-size:1.2rem;flex-shrink:0;margin-top:.05rem;}
+.val-t{font-weight:700;font-size:.9rem;margin-bottom:.18rem;}
+.val-d{font-size:.8rem;color:var(--off);line-height:1.6;}
+
+/* FACULTY */
+.fac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+@media(max-width:860px){.fac-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:460px){.fac-grid{grid-template-columns:1fr;}}
+.fac-c{background:var(--bg2);border:1px solid var(--bdr);border-radius:16px;padding:1.4rem;text-align:center;transition:border-color .22s,transform .25s;}
+.fac-c:hover{border-color:var(--bdr2);transform:translateY(-4px);}
+.fac-av{width:64px;height:64px;border-radius:50%;margin:0 auto .85rem;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.4rem;color:var(--w);}
+.fac-nm{font-weight:700;font-size:.92rem;margin-bottom:.18rem;}
+.fac-sub{font-size:.74rem;color:var(--muted);margin-bottom:.45rem;}
+.fac-exp{font-size:.7rem;font-weight:700;display:inline-flex;align-items:center;gap:.25rem;padding:.16rem .55rem;border-radius:50px;background:rgba(79,142,247,.1);color:var(--blue);}
+
+/* STATS ROW */
+.st-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;margin-top:3rem;}
+@media(max-width:600px){.st-row{grid-template-columns:1fr 1fr;}}
+.st-c{background:var(--bg2);padding:1.6rem;text-align:center;transition:background .2s;}
+.st-c:hover{background:var(--bg3);}
+.st-n{font-family:'Instrument Serif',serif;font-size:2.4rem;font-weight:400;color:var(--w);line-height:1;}
+.st-l{font-size:.76rem;color:var(--muted);font-weight:500;margin-top:.3rem;}
+
+/* DARK QUOTE */
+.dq{background:var(--bg2);border:1px solid var(--bdr);border-radius:20px;padding:3rem;position:relative;overflow:hidden;margin:4rem 0;text-align:center;}
+.dq::before{content:'"';position:absolute;top:-1rem;left:2.5rem;font-family:'Instrument Serif',serif;font-size:10rem;font-weight:400;color:rgba(255,255,255,.03);line-height:1;}
+.dq-t{font-family:'Instrument Serif',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-style:italic;font-weight:400;color:var(--w);line-height:1.5;margin-bottom:1rem;position:relative;z-index:1;}
+.dq-a{font-size:.82rem;font-weight:600;color:var(--gold);}
+
+/* FAQ */
+.fql{max-width:640px;margin:2.5rem auto 0;}
+.fi{border-bottom:1px solid var(--bdr);}
+.fq{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0;gap:1rem;background:none;border:none;color:var(--w);font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;text-align:left;transition:color .18s;}
+.fq:hover{color:var(--off);}
+.fi-ic{color:var(--muted);font-size:1.1rem;flex-shrink:0;transition:transform .3s var(--ease);}
+.fi.op .fi-ic{transform:rotate(45deg);color:var(--w);}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s var(--ease),padding .3s;font-size:.85rem;color:var(--off);line-height:1.75;}
+.fi.op .fa{max-height:220px;padding-bottom:1.2rem;}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur-r"></div><div id="spb"></div>
+<a href="https://wa.me/919000000000" class="wa-fl" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="nav">
+  <a href="index.html" class="n-logo"><div class="lb"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><span>Vertex <span class="gd">Education</span></span></a>
+  <ul class="n-links" id="nl">
+    <li><a href="index.html">Home</a></li><li><a href="about.html" class="act">About</a></li>
+    <li><a href="batches.html">Batches</a></li><li><a href="experiments.html">Experiments</a></li>
+    <li><a href="programs.html">Programs</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="n-r" id="nr"><a href="contact.html" class="btn-g">Free Demo</a><a href="contact.html" class="btn-w">Enroll Now</a></div>
+  <button class="burger" id="bg"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="ph">
+  <div class="ph-grid"></div><div class="ph-glow"></div>
+  <div class="ph-content">
+    <div class="pill rv"><div class="dot"></div>Est. 2014 · Chandkheda, Ahmedabad</div>
+    <h1 class="sh rv d1" style="font-size:clamp(2.2rem,5vw,4.2rem)">Ten years of turning<br>students into <em>achievers.</em></h1>
+    <p class="sp rv d2" style="margin-bottom:1.5rem">Vertex Education started with a simple belief — every student in Chandkheda deserves coaching as good as any big city. That belief still drives everything we do.</p>
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap" class="rv d3">
+      <a href="contact.html" class="btn-p">Book Free Demo →</a>
+      <a href="batches.html" class="btn-o">View Batches</a>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mq"><div class="mq-t">
+  <span class="mi">Founded 2014 <span class="md">✦</span></span><span class="mi">500+ Students <span class="md">✦</span></span><span class="mi">25+ Expert Faculty <span class="md">✦</span></span><span class="mi">95% Success Rate <span class="md">✦</span></span><span class="mi">10+ Years Excellence <span class="md">✦</span></span><span class="mi">Chandkheda Ahmedabad <span class="md">✦</span></span><span class="mi"><span class="mb">CBSE</span> · <span class="mb">GSEB</span> · <span class="mb">ICSE</span> · <span class="mb">JEE</span> · <span class="mb">NEET</span> <span class="md">✦</span></span>
+  <span class="mi">Founded 2014 <span class="md">✦</span></span><span class="mi">500+ Students <span class="md">✦</span></span><span class="mi">25+ Expert Faculty <span class="md">✦</span></span><span class="mi">95% Success Rate <span class="md">✦</span></span><span class="mi">10+ Years Excellence <span class="md">✦</span></span><span class="mi">Chandkheda Ahmedabad <span class="md">✦</span></span><span class="mi"><span class="mb">CBSE</span> · <span class="mb">GSEB</span> · <span class="mb">ICSE</span> · <span class="mb">JEE</span> · <span class="mb">NEET</span> <span class="md">✦</span></span>
+</div></div>
+
+<!-- STORY -->
+<section class="sec">
+  <div class="story-split">
+    <div class="rv">
+      <div class="img-frame">
+        <!-- Replace with: <img src="images/about-institute.jpg" alt="Vertex Education Chandkheda"> -->
+        <div class="img-ph"><span>🏫</span><p>Add your institute photo<br>images/about-institute.jpg</p></div>
+        <div class="img-badge">
+          <div><div class="ab-n" data-target="500">0</div><div class="ab-l">Students<br>Mentored</div></div>
+          <div style="width:1px;height:36px;background:var(--bdr2)"></div>
+          <div><div class="ab-n" data-target="10">0</div><div class="ab-l">Years of<br>Excellence</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rv d2">
+      <span class="ol">Our Story</span>
+      <h2 class="sh">Where it all <em>began.</em></h2>
+      <p style="font-size:.9rem;color:var(--off);line-height:1.8;margin-bottom:1rem">Vertex Education was born from a simple but powerful belief — that every student in Chandkheda deserves the same quality of coaching available in India's biggest cities. In 2014, we opened with a handful of students, a passionate team, and a commitment to genuine teaching.</p>
+      <p style="font-size:.9rem;color:var(--off);line-height:1.8;margin-bottom:1.5rem">Today, 500+ students later, that belief is unchanged. We've grown into Ahmedabad's most trusted coaching institute — but our batches stay small, our teaching stays personal, and our dedication to every student stays absolute.</p>
+      <div class="tl">
+        <div class="tl-item rv"><div class="tl-yr">2014</div><div class="tl-t">The Beginning</div><div class="tl-d">Opened in Chandkheda with a small team and vision to bring premium coaching to local students.</div></div>
+        <div class="tl-item rv d1"><div class="tl-yr">2016</div><div class="tl-t">Growing Family</div><div class="tl-d">Crossed 100 students. Added dedicated Science and Maths faculty. Introduced weekly tests.</div></div>
+        <div class="tl-item rv d2"><div class="tl-yr">2018</div><div class="tl-t">JEE &amp; NEET Wing</div><div class="tl-d">Launched specialized JEE and NEET batches. First JEE qualifier from Vertex Education.</div></div>
+        <div class="tl-item rv"><div class="tl-yr">2020</div><div class="tl-t">Smart Board Learning</div><div class="tl-d">Installed digital smart panels across all classrooms. Visual, interactive learning became standard.</div></div>
+        <div class="tl-item rv d1"><div class="tl-yr">2022</div><div class="tl-t">ICSE Dedicated Batch</div><div class="tl-d">Launched separate exclusive ICSE batches with specialist faculty — first in the Chandkheda area.</div></div>
+        <div class="tl-item rv d2"><div class="tl-yr">Today</div><div class="tl-t">500+ Students · 95% Success</div><div class="tl-d">Still growing, still personal, still genuinely Vertex.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- DARK QUOTE -->
+<section class="sec blk">
+  <div class="dq rv">
+    <div class="dq-t">"We don't just teach subjects. We build confidence, nurture curiosity, and help every student discover what they're truly capable of."</div>
+    <div class="dq-a">— Founder, Vertex Education · Chandkheda, Ahmedabad</div>
+  </div>
+
+  <!-- MVV -->
+  <span class="ol rv">Our Foundation</span>
+  <h2 class="sh rv d1">Mission, Vision<br>&amp; <em>Approach.</em></h2>
+  <div class="mvv rv d2">
+    <div class="mvv-c"><div class="mvv-ic">🎯</div><div class="mvv-t">Our Mission</div><div class="mvv-d">To provide every student in Chandkheda with world-class coaching through expert faculty, small batches, and smart technology — making academic excellence accessible for all.</div></div>
+    <div class="mvv-c"><div class="mvv-ic">🔭</div><div class="mvv-t">Our Vision</div><div class="mvv-d">To be the most trusted coaching partner for families across Ahmedabad — where students don't just pass exams, but grow into confident, capable, curious learners.</div></div>
+    <div class="mvv-c"><div class="mvv-ic">💡</div><div class="mvv-t">Our Approach</div><div class="mvv-d">Concept before memorization. Understanding before repetition. Activity before theory. We teach the way students actually learn — through clarity, curiosity, and consistent practice.</div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- VALUES -->
+<section class="sec">
+  <span class="ol rv">What We Stand For</span>
+  <h2 class="sh rv d1">Our core <em>values.</em></h2>
+  <p class="sp rv d2">These aren't words on a wall — they're how we show up for every student, every day.</p>
+  <div class="vals">
+    <div class="val-c rv"><div class="val-ic">🤝</div><div><div class="val-t">Integrity in Teaching</div><div class="val-d">Every class is prepared. Every student is seen. Every parent is kept honestly informed.</div></div></div>
+    <div class="val-c rv d1"><div class="val-ic">❤️</div><div><div class="val-t">Genuine Care</div><div class="val-d">We care about students as people, not just exam scores. Confidence matters as much as marks.</div></div></div>
+    <div class="val-c rv"><div class="val-ic">📈</div><div><div class="val-t">Continuous Improvement</div><div class="val-d">We constantly update teaching methods, adopt new technology, and raise the bar for coaching.</div></div></div>
+    <div class="val-c rv d1"><div class="val-ic">🌟</div><div><div class="val-t">Excellence for All</div><div class="val-d">Every student deserves our best — not just the toppers. We find each child's strength and build from there.</div></div></div>
+    <div class="val-c rv"><div class="val-ic">👪</div><div><div class="val-t">Family Partnership</div><div class="val-d">Parents are partners. Monthly meetings, reports, and open communication keep families empowered.</div></div></div>
+    <div class="val-c rv d1"><div class="val-ic">🔬</div><div><div class="val-t">Learning by Doing</div><div class="val-d">Activities, experiments, and smart board visuals make abstract concepts real and unforgettable.</div></div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- FACULTY -->
+<section class="sec blk">
+  <span class="ol rv">Our Team</span>
+  <h2 class="sh rv d1">Expert faculty behind<br>every <em>success.</em></h2>
+  <p class="sp rv d2">25+ experienced teachers, each passionate about their subject and dedicated to every student's growth.</p>
+  <div class="fac-grid">
+    <div class="fac-c rv"><div class="fac-av" style="background:linear-gradient(135deg,#2563EB,#4F8EF7)">R</div><div class="fac-nm">Rajesh Sir</div><div class="fac-sub">Physics · JEE / Class 11–12</div><div class="fac-exp">⭐ 12 Years</div></div>
+    <div class="fac-c rv d1"><div class="fac-av" style="background:linear-gradient(135deg,#15803d,#22c55e)">P</div><div class="fac-nm">Priya Ma'am</div><div class="fac-sub">Biology · NEET / Class 10–12</div><div class="fac-exp">⭐ 9 Years</div></div>
+    <div class="fac-c rv d2"><div class="fac-av" style="background:linear-gradient(135deg,#92690a,#F4B400)">A</div><div class="fac-nm">Amit Sir</div><div class="fac-sub">Mathematics · JEE / Class 9–12</div><div class="fac-exp">⭐ 11 Years</div></div>
+    <div class="fac-c rv d3"><div class="fac-av" style="background:linear-gradient(135deg,#7e22ce,#9333ea)">S</div><div class="fac-nm">Sneha Ma'am</div><div class="fac-sub">Chemistry · NEET / Class 11–12</div><div class="fac-exp">⭐ 8 Years</div></div>
+    <div class="fac-c rv"><div class="fac-av" style="background:linear-gradient(135deg,#b91c1c,#ef4444)">D</div><div class="fac-nm">Dharmesh Sir</div><div class="fac-sub">Science · GSEB Class 9–10</div><div class="fac-exp">⭐ 10 Years</div></div>
+    <div class="fac-c rv d1"><div class="fac-av" style="background:linear-gradient(135deg,#0369a1,#0284c7)">N</div><div class="fac-nm">Nisha Ma'am</div><div class="fac-sub">English · CBSE / ICSE</div><div class="fac-exp">⭐ 7 Years</div></div>
+    <div class="fac-c rv d2"><div class="fac-av" style="background:linear-gradient(135deg,#0f766e,#0d9488)">K</div><div class="fac-nm">Kiran Sir</div><div class="fac-sub">Maths · Foundation Class 6–8</div><div class="fac-exp">⭐ 8 Years</div></div>
+    <div class="fac-c rv d3"><div class="fac-av" style="background:linear-gradient(135deg,#be185d,#db2777)">M</div><div class="fac-nm">Meera Ma'am</div><div class="fac-sub">Science · CBSE / GSEB Class 6–8</div><div class="fac-exp">⭐ 6 Years</div></div>
+  </div>
+  <p style="text-align:center;margin-top:1.3rem;font-size:.82rem;color:var(--muted)">+ 17 more subject specialists across all classes and boards</p>
+
+  <!-- STATS -->
+  <div class="st-row rv" style="margin-top:3.5rem">
+    <div class="st-c"><div class="st-n"><span data-target="500">0</span>+</div><div class="st-l">Students Mentored</div></div>
+    <div class="st-c"><div class="st-n"><span data-target="95">0</span>%</div><div class="st-l">Success Rate</div></div>
+    <div class="st-c"><div class="st-n"><span data-target="25">0</span>+</div><div class="st-l">Expert Faculty</div></div>
+    <div class="st-c"><div class="st-n"><span data-target="10">0</span>+</div><div class="st-l">Years of Excellence</div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- CTA -->
+<section class="sec" style="text-align:center">
+  <span class="ol rv" style="justify-content:center;display:block">Join the Family</span>
+  <h2 class="sh rv d1" style="text-align:center">Ready to be part of<br><em>Vertex Education?</em></h2>
+  <p style="color:var(--off);font-size:.93rem;margin-bottom:1.5rem;max-width:420px;margin-left:auto;margin-right:auto" class="rv d2">Start with a free demo class and see for yourself why hundreds of families in Chandkheda trust us.</p>
+  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap" class="rv d3">
+    <a href="contact.html" class="btn-p">Book Free Demo Class →</a>
+    <a href="batches.html" class="btn-o">View All Batches</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-glow"></div>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.98rem;font-weight:700"><div style="width:25px;height:25px;border-radius:6px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Vertex <span style="color:var(--gold)">Education</span></div>
+      <p>Best coaching in Chandkheda, Ahmedabad. CBSE, GSEB, ICSE, JEE &amp; NEET since 2014.</p>
+      <div class="addr">G-17, Omkar Lotus, Motera Road,<br>Chandkheda, Ahmedabad 382424</div>
+    </div>
+    <div class="ft-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="batches.html">Batches</a></li><li><a href="experiments.html">Experiments</a></li><li><a href="programs.html">Programs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Courses</h4><ul><li><a href="batches.html">CBSE</a></li><li><a href="batches.html">GSEB</a></li><li><a href="batches.html">ICSE</a></li><li><a href="batches.html">JEE</a></li><li><a href="batches.html">NEET</a></li></ul></div>
+    <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:+919000000000">+91 90000 00000</a></li><li><a href="mailto:info@vertexeducation.in">Email Us</a></li><li><a href="https://wa.me/919000000000" target="_blank">WhatsApp</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span>© 2024 Vertex Education · Chandkheda, Ahmedabad</span><div class="srow"><a href="#" class="soc">f</a><a href="#" class="soc">in</a><a href="#" class="soc">▶</a><a href="#" class="soc">𝕏</a></div></div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+const _so=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('[data-target]').forEach(_count);}),{threshold:.3});
+document.querySelectorAll('.img-badge,.st-row').forEach(el=>_so.observe(el));
+</script>
+</body>
+</html>

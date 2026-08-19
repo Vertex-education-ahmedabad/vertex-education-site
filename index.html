@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Vertex Education — Learn at Ease | Best Coaching Chandkheda Ahmedabad</title>
+<meta name="description" content="Vertex Education — Chandkheda's most trusted coaching. CBSE, GSEB, ICSE, JEE & NEET for Class 6–12. Smart board classrooms, small batches, 95% success rate."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+/* ─────────────────────────────────────────
+   VERTEX EDUCATION — commas.com INSPIRED
+   Pure black · Cinematic · Minimal
+   ───────────────────────────────────────── */
+:root{
+  --bg:#080808; --bg2:#0e0e0e; --bg3:#141414;
+  --w:#ffffff; --off:rgba(255,255,255,.55); --muted:rgba(255,255,255,.3);
+  --bdr:rgba(255,255,255,.08); --bdr2:rgba(255,255,255,.13);
+  --gold:#F4B400; --blue:#4F8EF7; --blue2:#2563EB; --grn:#22c55e;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--w);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+button,a{cursor:none;}
+
+/* CURSOR */
+#cur{position:fixed;z-index:9999;top:0;left:0;width:8px;height:8px;background:var(--w);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s var(--ease),height .2s var(--ease);mix-blend-mode:difference;}
+#cur-r{position:fixed;z-index:9998;top:0;left:0;width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:all .18s var(--ease);}
+body:has(a:hover) #cur,body:has(button:hover) #cur{width:18px;height:18px;}
+body:has(a:hover) #cur-r,body:has(button:hover) #cur-r{width:50px;height:50px;border-color:rgba(255,255,255,.08);}
+
+/* SCROLL BAR */
+#spb{position:fixed;top:0;left:0;height:1px;background:var(--w);z-index:999;width:0%;transition:width .04s linear;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.3rem 4vw;transition:all .4s var(--ease);}
+nav.s{background:rgba(8,8,8,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);padding:.9rem 4vw;}
+.n-logo{display:flex;align-items:center;gap:.55rem;font-size:1rem;font-weight:700;letter-spacing:-.015em;}
+.n-logo .lb{width:27px;height:27px;border-radius:7px;background:linear-gradient(135deg,var(--blue2),var(--blue));display:flex;align-items:center;justify-content:center;}
+.n-logo .lb svg{width:15px;height:15px;fill:white;}
+.n-logo .gd{color:var(--gold);}
+.n-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.n-links a{font-size:.84rem;font-weight:500;color:var(--off);transition:color .18s;}
+.n-links a:hover{color:var(--w);}
+.n-r{display:flex;align-items:center;gap:.7rem;}
+.btn-g{border:1px solid var(--bdr2);border-radius:50px;padding:.48rem 1.15rem;font-size:.81rem;font-weight:600;color:var(--off);background:transparent;font-family:'Inter',sans-serif;transition:all .18s;display:inline-flex;align-items:center;}
+.btn-g:hover{color:var(--w);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.06);}
+.btn-w{background:var(--w);color:#000;border:none;border-radius:50px;padding:.5rem 1.25rem;font-size:.81rem;font-weight:700;font-family:'Inter',sans-serif;transition:all .2s;display:inline-flex;align-items:center;}
+.btn-w:hover{background:rgba(255,255,255,.88);transform:translateY(-1px);}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;}
+.burger span{display:block;width:22px;height:1.5px;background:var(--w);border-radius:2px;transition:all .3s;}
+.burger.o span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.burger.o span:nth-child(2){opacity:0;}
+.burger.o span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+@media(max-width:860px){
+  .n-links,.n-r{display:none;}
+  .n-links.o{display:flex;flex-direction:column;gap:2rem;position:fixed;inset:0;background:rgba(8,8,8,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;z-index:800;font-size:1.3rem;}
+  .n-links.o a{font-size:1.2rem;color:var(--w);}
+  .n-r.o{display:flex;flex-direction:column;gap:.7rem;position:fixed;bottom:3rem;left:50%;transform:translateX(-50%);z-index:800;}
+  .burger{display:flex;}
+}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10rem 5vw 5rem;position:relative;overflow:hidden;}
+.h-glow{position:absolute;top:-25%;left:50%;transform:translateX(-50%);width:800px;height:700px;background:radial-gradient(ellipse at center,rgba(79,142,247,.16) 0%,transparent 65%);pointer-events:none;animation:gp 5s ease-in-out infinite;}
+@keyframes gp{0%,100%{opacity:.7;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+.h-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 0%,transparent 100%);}
+.pts{position:absolute;inset:0;pointer-events:none;}
+.pt{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);animation:drift linear infinite;}
+@keyframes drift{from{transform:translateY(0) rotate(0)}to{transform:translateY(-100vh) rotate(360deg)}}
+.pill{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--bdr2);border-radius:50px;padding:.3rem .9rem;font-size:.73rem;font-weight:600;color:var(--off);letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem;}
+.pill .dot{width:5px;height:5px;border-radius:50%;background:var(--grn);animation:bl 2s infinite;}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
+.hero h1{font-size:clamp(2.8rem,7.5vw,7rem);font-weight:900;line-height:1.03;letter-spacing:-.038em;margin-bottom:1.5rem;position:relative;z-index:1;}
+.hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--gold);}
+.hero-sub{font-size:clamp(.92rem,1.6vw,1.1rem);color:var(--off);line-height:1.75;max-width:500px;margin:0 auto 2.5rem;position:relative;z-index:1;}
+.hero-btns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:4rem;}
+.btn-p{background:var(--w);color:#000;border:none;border-radius:50px;padding:.82rem 2rem;font-size:.92rem;font-weight:700;font-family:'Inter',sans-serif;transition:all .2s var(--ease);display:inline-flex;align-items:center;gap:.4rem;}
+.btn-p:hover{background:rgba(255,255,255,.88);transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,255,255,.1);}
+.btn-o{background:transparent;color:var(--off);border:1px solid var(--bdr2);border-radius:50px;padding:.82rem 2rem;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;transition:all .2s var(--ease);display:inline-flex;align-items:center;gap:.4rem;}
+.btn-o:hover{color:var(--w);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.05);transform:translateY(-2px);}
+
+/* hero stats bar */
+.h-stats{display:flex;border:1px solid var(--bdr);border-radius:16px;background:rgba(255,255,255,.03);backdrop-filter:blur(12px);overflow:hidden;position:relative;z-index:1;flex-wrap:wrap;}
+.hs{padding:1.1rem 2rem;flex:1;min-width:120px;border-right:1px solid var(--bdr);text-align:center;}
+.hs:last-child{border-right:none;}
+.hs-n{font-size:1.65rem;font-weight:900;letter-spacing:-.03em;line-height:1;}
+.hs-n span{color:var(--gold);}
+.hs-l{font-size:.72rem;color:var(--muted);font-weight:500;margin-top:.25rem;}
+
+/* hero mockup */
+.h-mock{margin-top:4rem;width:min(900px,90vw);position:relative;z-index:1;}
+.mock-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:radial-gradient(ellipse at center,rgba(79,142,247,.12) 0%,transparent 60%);pointer-events:none;}
+.mock-frame{background:var(--bg3);border:1px solid var(--bdr2);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.04),0 50px 120px rgba(0,0,0,.85);}
+.mock-bar{background:var(--bg2);border-bottom:1px solid var(--bdr);padding:.8rem 1.3rem;display:flex;align-items:center;gap:.9rem;}
+.mock-dots{display:flex;gap:.4rem;}
+.mock-dot{width:12px;height:12px;border-radius:50%;}
+.mock-title{font-size:.75rem;color:var(--muted);font-weight:500;flex:1;text-align:center;}
+.mock-body{padding:1.5rem;}
+.mock-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-bottom:.9rem;}
+@media(max-width:560px){.mock-row{grid-template-columns:1fr 1fr;}}
+.mc{background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:12px;padding:1rem;}
+.mc-l{font-size:.7rem;color:var(--muted);margin-bottom:.3rem;font-weight:500;}
+.mc-n{font-size:1.4rem;font-weight:800;letter-spacing:-.02em;}
+.mc-s{font-size:.68rem;color:var(--grn);font-weight:600;margin-top:.12rem;}
+.mock-bars{background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:12px;padding:1rem;}
+.mb-l{font-size:.72rem;color:var(--muted);margin-bottom:.75rem;font-weight:500;}
+.mb-rows{display:flex;flex-direction:column;gap:.45rem;}
+.mb-r{display:flex;align-items:center;gap:.7rem;}
+.mb-n{font-size:.7rem;color:var(--off);width:62px;flex-shrink:0;}
+.mb-t{flex:1;height:6px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
+.mb-f{height:100%;border-radius:3px;}
+.mb-p{font-size:.68rem;color:var(--off);width:30px;text-align:right;}
+
+/* ── MARQUEE ── */
+.mq-wrap{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:1.1rem 0;overflow:hidden;background:var(--bg2);}
+.mq-track{display:flex;gap:2.8rem;width:max-content;animation:mqs 25s linear infinite;}
+.mq-track:hover{animation-play-state:paused;}
+@keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mi{display:flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;}
+.mi .md{color:var(--gold);}
+.mi .mb-tag{border:1px solid var(--bdr2);border-radius:4px;padding:.1rem .38rem;font-size:.62rem;font-weight:700;color:var(--blue);letter-spacing:.04em;}
+
+/* ── SECTION ── */
+.sec{padding:7rem 5vw;}
+.sec.dark{background:var(--bg);}
+.sec.blk{background:#000;}
+.sec.mid{background:var(--bg2);}
+.ol{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem;display:block;}
+.sh{font-size:clamp(1.9rem,4.5vw,3.8rem);font-weight:900;line-height:1.07;letter-spacing:-.03em;margin-bottom:1rem;}
+.sh em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;}
+.sp{font-size:.97rem;color:var(--off);line-height:1.75;max-width:480px;margin-bottom:2.5rem;}
+.sep{border:none;border-top:1px solid var(--bdr);margin:0;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.rv.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.18s;}.d3{transition-delay:.26s;}.d4{transition-delay:.34s;}
+
+/* ── OVERVIEW GRID ── */
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--bdr);border-radius:20px;overflow:hidden;margin-top:3.5rem;background:var(--bdr);}
+@media(max-width:700px){.ov-grid{grid-template-columns:1fr;}}
+.ov-item{background:var(--bg2);padding:2.1rem 2.3rem;transition:background .22s;display:flex;flex-direction:column;gap:.55rem;}
+.ov-item:hover{background:var(--bg3);}
+.ov-ic{font-size:1.55rem;margin-bottom:.2rem;}
+.ov-t{font-size:1rem;font-weight:700;}
+.ov-d{font-size:.84rem;color:var(--off);line-height:1.65;}
+.ov-lk{font-size:.78rem;color:var(--blue);font-weight:600;margin-top:.3rem;display:inline-flex;align-items:center;gap:.25rem;}
+
+/* ── FEATURE SPLIT ── */
+.fsplit{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.fsplit.fl{direction:rtl;}
+.fsplit.fl>*{direction:ltr;}
+@media(max-width:860px){.fsplit,.fsplit.fl{grid-template-columns:1fr;gap:2.5rem;direction:ltr;}}
+.fv{background:var(--bg3);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;min-height:340px;display:flex;align-items:center;justify-content:center;position:relative;}
+.fv-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(79,142,247,.09) 0%,transparent 60%);}
+.check-list{display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem;}
+.check-list li{display:flex;align-items:center;gap:.7rem;font-size:.86rem;color:var(--off);list-style:none;}
+.check-list li .ck{color:var(--grn);font-size:.9rem;flex-shrink:0;}
+
+/* smart board */
+.sb{width:88%;margin:1.5rem auto;background:#080818;border:1px solid rgba(79,142,247,.18);border-radius:12px;overflow:hidden;box-shadow:0 0 40px rgba(79,142,247,.08);}
+.sb-top{background:rgba(79,142,247,.08);padding:.5rem 1rem;border-bottom:1px solid rgba(79,142,247,.12);font-size:.62rem;color:rgba(79,142,247,.55);font-weight:600;letter-spacing:.04em;}
+.sb-body{padding:1.3rem;}
+.sb-eqn{font-size:1.35rem;color:var(--w);font-weight:300;text-align:center;margin:.5rem 0;letter-spacing:.06em;}
+.sb-sub{text-align:center;font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.2rem;}
+.sb-graph{display:flex;align-items:flex-end;gap:5px;height:64px;margin-top:1rem;justify-content:center;}
+.sb-b{width:16px;border-radius:3px 3px 0 0;background:rgba(79,142,247,.55);animation:sg .8s var(--ease) forwards;transform-origin:bottom;}
+@keyframes sg{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.sb-tags{display:flex;gap:.5rem;justify-content:center;margin-top:1rem;}
+.sb-tag{font-size:.65rem;border-radius:50px;padding:.18rem .55rem;font-weight:700;}
+
+/* results cards stack */
+.rs-wrap{width:88%;margin:1.5rem auto;display:flex;flex-direction:column;gap:.6rem;}
+.rs-c{background:var(--bg2);border:1px solid var(--bdr2);border-radius:12px;padding:1rem 1.2rem;display:flex;align-items:center;gap:.9rem;transition:background .2s;}
+.rs-c:hover{background:#141414;}
+.rs-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;flex-shrink:0;}
+.rs-nm{font-weight:700;font-size:.88rem;}
+.rs-dt{font-size:.72rem;color:var(--muted);}
+.rs-bd{margin-left:auto;font-size:.76rem;font-weight:800;padding:.22rem .6rem;border-radius:50px;background:rgba(34,197,94,.1);color:var(--grn);white-space:nowrap;}
+
+/* activity grid */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;width:88%;margin:1.5rem auto;}
+.ac{background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:12px;padding:.95rem;transition:background .2s;}
+.ac:hover{background:rgba(255,255,255,.07);}
+.ac-ic{font-size:1.3rem;margin-bottom:.35rem;}
+.ac-t{font-size:.8rem;font-weight:700;}
+.ac-d{font-size:.7rem;color:var(--muted);line-height:1.5;margin-top:.18rem;}
+
+/* ── RESULTS SCROLL ── */
+.rscroll{overflow:hidden;position:relative;}
+.rsfl,.rsfr{position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none;}
+.rsfl{left:0;background:linear-gradient(to right,#000,transparent);}
+.rsfr{right:0;background:linear-gradient(to left,#000,transparent);}
+.rs-track{display:flex;gap:1.1rem;width:max-content;animation:mqs 32s linear infinite;}
+.rs-track:hover{animation-play-state:paused;}
+.rc{width:185px;flex-shrink:0;background:var(--bg2);border:1px solid var(--bdr2);border-radius:16px;overflow:hidden;transition:transform .28s var(--ease),box-shadow .28s;}
+.rc:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.6);}
+.rc-top{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;}
+.rc-pct{font-size:2.1rem;font-weight:900;letter-spacing:-.04em;}
+.rc-bd{font-size:.68rem;font-weight:700;opacity:.6;}
+.rc-bot{padding:.85rem 1rem;border-top:1px solid var(--bdr);}
+.rc-nm{font-weight:700;font-size:.82rem;}
+.rc-cl{font-size:.7rem;color:var(--muted);}
+.rc-bg{display:inline-flex;align-items:center;gap:.2rem;margin-top:.35rem;font-size:.68rem;font-weight:700;color:var(--grn);background:rgba(34,197,94,.1);border-radius:50px;padding:.16rem .5rem;}
+
+/* ── BENTO WHY ── */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;margin-top:3.5rem;}
+@media(max-width:860px){.bento{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.bento{grid-template-columns:1fr;}}
+.bc{background:var(--bg2);padding:1.9rem;transition:background .2s;position:relative;overflow:hidden;}
+.bc:hover{background:#111;}
+.bc.sp2{grid-column:span 2;}
+@media(max-width:860px){.bc.sp2{grid-column:span 1;}}
+.bc-no{position:absolute;right:1.1rem;top:.9rem;font-size:3.2rem;font-weight:900;color:rgba(255,255,255,.03);line-height:1;}
+.bc-ic{font-size:1.45rem;margin-bottom:.85rem;}
+.bc-t{font-size:.96rem;font-weight:700;margin-bottom:.38rem;}
+.bc-d{font-size:.82rem;color:var(--off);line-height:1.65;}
+
+/* ── TESTIMONIALS ── */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;}
+@media(max-width:880px){.tg{grid-template-columns:1fr 1fr;}}
+@media(max-width:540px){.tg{grid-template-columns:1fr;}}
+.tc{background:var(--bg2);border:1px solid var(--bdr);border-radius:18px;padding:1.55rem;transition:border-color .2s,transform .25s;}
+.tc:hover{border-color:var(--bdr2);transform:translateY(-4px);}
+.tc.ft{background:#0b1929;border-color:rgba(79,142,247,.2);}
+.t-stars{display:flex;gap:2px;margin-bottom:.85rem;}
+.t-star{color:var(--gold);font-size:.8rem;}
+.t-txt{font-size:.86rem;color:var(--off);line-height:1.75;margin-bottom:1.15rem;}
+.t-auth{display:flex;align-items:center;gap:.65rem;}
+.t-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.88rem;flex-shrink:0;}
+.t-nm{font-weight:700;font-size:.83rem;}
+.t-rl{font-size:.7rem;color:var(--muted);}
+
+/* ── PROCESS ── */
+.prlist{display:flex;flex-direction:column;gap:0;max-width:620px;margin:3rem auto 0;}
+.pr{display:flex;gap:1.4rem;align-items:flex-start;padding:1.5rem 0;border-bottom:1px solid var(--bdr);}
+.pr:last-child{border-bottom:none;}
+.pr-no{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:rgba(255,255,255,.06);border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9rem;transition:all .2s;}
+.pr:hover .pr-no{background:var(--blue2);border-color:var(--blue2);}
+.pr-t{font-weight:700;font-size:.95rem;margin-bottom:.22rem;}
+.pr-d{font-size:.82rem;color:var(--off);line-height:1.65;}
+
+/* ── FAQ ── */
+.fql{max-width:660px;margin:2.5rem auto 0;}
+.fi{border-bottom:1px solid var(--bdr);}
+.fq{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;gap:1rem;background:none;border:none;color:var(--w);font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;text-align:left;transition:color .18s;}
+.fq:hover{color:var(--off);}
+.fi-ic{color:var(--muted);font-size:1.2rem;flex-shrink:0;transition:transform .3s var(--ease);}
+.fi.op .fi-ic{transform:rotate(45deg);color:var(--w);}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s var(--ease),padding .3s;font-size:.86rem;color:var(--off);line-height:1.75;}
+.fi.op .fa{max-height:250px;padding-bottom:1.25rem;}
+
+/* ── CONTACT ── */
+.cw{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3.5rem;}
+@media(max-width:860px){.cw{grid-template-columns:1fr;}}
+.fb{background:var(--bg2);border:1px solid var(--bdr);border-radius:20px;padding:2.1rem;}
+.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:.9rem;}
+.fg label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.05);border:1px solid var(--bdr);border-radius:10px;padding:.74rem 1rem;font-size:.86rem;font-family:'Inter',sans-serif;color:var(--w);outline:none;transition:border-color .2s,box-shadow .2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(255,255,255,.22);box-shadow:0 0 0 3px rgba(255,255,255,.04);}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
+.fg select option{background:#1a1a1a;color:var(--w);}
+.fg textarea{resize:vertical;min-height:95px;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+@media(max-width:460px){.fr{grid-template-columns:1fr;}}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;}
+.chip{border:1px solid var(--bdr2);border-radius:50px;padding:.3rem .8rem;font-size:.76rem;font-weight:600;color:var(--muted);background:transparent;font-family:'Inter',sans-serif;transition:all .16s;}
+.chip.on,.chip:hover{background:var(--w);color:#000;border-color:var(--w);}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;}
+.sr{display:flex;align-items:center;gap:.45rem;font-size:.81rem;color:var(--off);}
+.sr input[type=checkbox]{width:14px;height:14px;accent-color:var(--blue);}
+.fsub{width:100%;background:var(--w);color:#000;border:none;border-radius:50px;padding:.9rem;font-size:.92rem;font-weight:700;font-family:'Inter',sans-serif;transition:all .2s var(--ease);margin-top:.55rem;display:flex;align-items:center;justify-content:center;gap:.4rem;}
+.fsub:hover{background:rgba(255,255,255,.88);transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,255,255,.08);}
+.suc{display:none;margin-top:.9rem;padding:.95rem 1rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;font-size:.84rem;color:var(--grn);}
+.ilist{display:flex;flex-direction:column;gap:.9rem;}
+.ii{display:flex;align-items:flex-start;gap:.9rem;background:var(--bg2);border:1px solid var(--bdr);border-radius:14px;padding:1.1rem 1.3rem;transition:border-color .2s;}
+.ii:hover{border-color:var(--bdr2);}
+.ii-ic{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;}
+.ii-lb{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.18rem;}
+.ii-v{font-size:.88rem;font-weight:600;color:var(--w);line-height:1.5;}
+.ii-v a{color:var(--blue);}
+.wa-b{display:flex;align-items:center;justify-content:center;gap:.55rem;width:100%;background:#25D366;color:#fff;border:none;border-radius:50px;padding:.82rem;font-size:.88rem;font-weight:700;font-family:'Inter',sans-serif;transition:all .2s;}
+.wa-b:hover{background:#1fb959;transform:translateY(-2px);box-shadow:0 8px 22px rgba(37,211,102,.28);}
+.map-l{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem;border:1px solid var(--bdr);border-radius:12px;font-size:.82rem;font-weight:600;color:var(--off);transition:all .2s;}
+.map-l:hover{border-color:var(--bdr2);color:var(--w);}
+
+/* ── FOOTER ── */
+footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem;position:relative;overflow:hidden;}
+.ft-glow{position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse at center,rgba(79,142,247,.07) 0%,transparent 65%);pointer-events:none;}
+.ft-cta{text-align:center;margin-bottom:4rem;position:relative;z-index:1;}
+.ft-cta h2{font-size:clamp(1.7rem,4vw,3rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:.8rem;}
+.ft-cta h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--gold);}
+.ft-cta p{font-size:.9rem;color:var(--muted);margin-bottom:1.4rem;}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;position:relative;z-index:1;}
+@media(max-width:860px){.ft-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+@media(max-width:460px){.ft-grid{grid-template-columns:1fr;}}
+.ft-brand p{font-size:.83rem;color:var(--muted);line-height:1.75;max-width:230px;margin-top:.75rem;}
+.ft-brand .addr{font-size:.74rem;color:rgba(255,255,255,.2);margin-top:.65rem;line-height:1.6;}
+.ft-col h4{font-size:.75rem;font-weight:700;color:var(--off);text-transform:uppercase;letter-spacing:.07em;margin-bottom:1rem;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.ft-col ul a{font-size:.82rem;color:var(--muted);transition:color .16s;}
+.ft-col ul a:hover{color:var(--w);}
+.ft-bot{border-top:1px solid var(--bdr);padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;font-size:.76rem;color:var(--muted);flex-wrap:wrap;gap:.7rem;position:relative;z-index:1;}
+.srow{display:flex;gap:.6rem;}
+.soc{width:30px;height:30px;border-radius:50%;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:all .16s;}
+.soc:hover{border-color:var(--bdr2);color:var(--w);background:rgba(255,255,255,.06);}
+
+/* WA FLOAT */
+.wa-fl{position:fixed;bottom:2rem;right:2rem;z-index:800;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,.38);transition:all .22s;animation:waf 2.5s ease-in-out infinite;}
+.wa-fl:hover{transform:scale(1.1) translateY(-3px);animation:none;}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+#btt{position:fixed;bottom:2rem;left:2rem;z-index:800;width:36px;height:36px;border-radius:50%;border:1px solid var(--bdr2);background:rgba(255,255,255,.05);color:var(--off);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transition:all .25s;}
+#btt.sh{opacity:1;pointer-events:auto;}
+#btt:hover{background:rgba(255,255,255,.1);color:var(--w);}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+<div id="spb"></div>
+
+<a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20know%20more%20about%20Vertex%20Education." class="wa-fl" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="n-logo">
+    <div class="lb"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <span>Vertex <span class="gd">Education</span></span>
+  </a>
+  <ul class="n-links" id="nl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="n-r" id="nr">
+    <a href="#contact" class="btn-g">Free Demo</a>
+    <a href="#contact" class="btn-w">Enroll Now</a>
+  </div>
+  <button class="burger" id="bg"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="h-glow"></div>
+  <div class="h-grid"></div>
+  <div class="pts" id="pts"></div>
+
+  <div class="pill rv"><div class="dot"></div>Chandkheda, Ahmedabad · Est. 2014</div>
+  <h1 class="rv d1">
+    Where students reach<br>their <em>next</em> academic<br><span style="background:linear-gradient(135deg,#fff 30%,rgba(255,255,255,.45) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">milestone.</span>
+  </h1>
+  <p class="hero-sub rv d2">Expert coaching for CBSE, GSEB, ICSE, JEE &amp; NEET in Chandkheda. Smart board classrooms, small batches of max 20, 95% success rate — Class 6 through competitive exams.</p>
+  <div class="hero-btns rv d3">
+    <a href="#contact" class="btn-p">Enroll Now →</a>
+    <a href="#courses" class="btn-o">Explore Courses</a>
+  </div>
+
+  <div class="h-stats rv d4">
+    <div class="hs"><div class="hs-n"><span class="cnt" data-target="500">0</span><span>+</span></div><div class="hs-l">Students</div></div>
+    <div class="hs"><div class="hs-n"><span class="cnt" data-target="25">0</span><span>+</span></div><div class="hs-l">Expert Teachers</div></div>
+    <div class="hs"><div class="hs-n"><span class="cnt" data-target="95">0</span><span>%</span></div><div class="hs-l">Success Rate</div></div>
+    <div class="hs"><div class="hs-n"><span class="cnt" data-target="10">0</span><span>+</span></div><div class="hs-l">Years</div></div>
+  </div>
+
+  <!-- Dashboard mockup -->
+  <div class="h-mock rv" style="transition-delay:.45s">
+    <div class="mock-glow"></div>
+    <div class="mock-frame">
+      <div class="mock-bar">
+        <div class="mock-dots">
+          <div class="mock-dot" style="background:#ff5f57"></div>
+          <div class="mock-dot" style="background:#febc2e"></div>
+          <div class="mock-dot" style="background:#28c840"></div>
+        </div>
+        <div class="mock-title">Vertex Education — Student Dashboard</div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-row">
+          <div class="mc"><div class="mc-l">Your Score</div><div class="mc-n" style="color:#4F8EF7">94.2%</div><div class="mc-s">↑ +8% this month</div></div>
+          <div class="mc"><div class="mc-l">Tests Done</div><div class="mc-n">18/20</div><div class="mc-s">↑ On track</div></div>
+          <div class="mc"><div class="mc-l">Batch Rank</div><div class="mc-n" style="color:#F4B400">#3</div><div class="mc-s">↑ Up 2 places</div></div>
+        </div>
+        <div class="mock-bars">
+          <div class="mb-l">Subject Performance</div>
+          <div class="mb-rows">
+            <div class="mb-r"><span class="mb-n">Physics</span><div class="mb-t"><div class="mb-f" style="width:88%;background:linear-gradient(90deg,#4F8EF7,#7dd3fc)"></div></div><span class="mb-p">88%</span></div>
+            <div class="mb-r"><span class="mb-n">Chemistry</span><div class="mb-t"><div class="mb-f" style="width:92%;background:linear-gradient(90deg,#22c55e,#86efac)"></div></div><span class="mb-p">92%</span></div>
+            <div class="mb-r"><span class="mb-n">Maths</span><div class="mb-t"><div class="mb-f" style="width:96%;background:linear-gradient(90deg,#F4B400,#fde68a)"></div></div><span class="mb-p">96%</span></div>
+            <div class="mb-r"><span class="mb-n">Biology</span><div class="mb-t"><div class="mb-f" style="width:85%;background:linear-gradient(90deg,#a855f7,#d8b4fe)"></div></div><span class="mb-p">85%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <div class="mq-track">
+    <span class="mi"><span class="mb-tag">CBSE</span>Board Coaching<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">GSEB</span>Gujarati &amp; English Medium<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">ICSE</span>Dedicated Separate Batches<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">JEE</span>Main &amp; Advanced<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">NEET</span>PCB Preparation<span class="md">✦</span></span>
+    <span class="mi">Smart Board Classes<span class="md">✦</span></span>
+    <span class="mi">Max 20 Per Batch<span class="md">✦</span></span>
+    <span class="mi">Monthly Parent Meetings<span class="md">✦</span></span>
+    <span class="mi">Weekly Tests<span class="md">✦</span></span>
+    <span class="mi">Science Experiments<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">CBSE</span>Board Coaching<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">GSEB</span>Gujarati &amp; English Medium<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">ICSE</span>Dedicated Separate Batches<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">JEE</span>Main &amp; Advanced<span class="md">✦</span></span>
+    <span class="mi"><span class="mb-tag">NEET</span>PCB Preparation<span class="md">✦</span></span>
+    <span class="mi">Smart Board Classes<span class="md">✦</span></span>
+    <span class="mi">Max 20 Per Batch<span class="md">✦</span></span>
+    <span class="mi">Monthly Parent Meetings<span class="md">✦</span></span>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="sec dark" id="about">
+  <span class="ol rv">Overview</span>
+  <h2 class="sh rv d1">Everything your child needs<br>to <em>excel academically.</em></h2>
+  <p class="sp rv d2">What used to require multiple tutors, scattered classes, and zero tracking now takes one Vertex Education enrollment.</p>
+  <div class="ov-grid rv d3">
+    <div class="ov-item"><div class="ov-ic">📚</div><div class="ov-t">Board Coaching — CBSE, GSEB &amp; ICSE</div><div class="ov-d">Dedicated separate batches for each board. ICSE students get their own exclusive batch with ICSE-specialist faculty.</div><span class="ov-lk">See batches →</span></div>
+    <div class="ov-item"><div class="ov-ic">🎯</div><div class="ov-t">Competitive Exams — JEE &amp; NEET</div><div class="ov-d">1–2 year structured programs with daily problem solving, full mock test series, and rank-improvement tracking.</div><span class="ov-lk">View programs →</span></div>
+    <div class="ov-item"><div class="ov-ic">🖥️</div><div class="ov-t">Smart Board Digital Classrooms</div><div class="ov-d">Every classroom has a smart panel for visual, interactive learning — equations, diagrams and experiments come alive on screen.</div><span class="ov-lk">How it works →</span></div>
+    <div class="ov-item"><div class="ov-ic">🔬</div><div class="ov-t">Science Experiments &amp; Activities</div><div class="ov-d">Concept-through-activity sessions, recorded experiment videos, science fairs and hands-on programs that make ideas concrete.</div><span class="ov-lk">Watch experiments →</span></div>
+    <div class="ov-item"><div class="ov-ic">👪</div><div class="ov-t">Monthly Parent–Teacher Meetings</div><div class="ov-d">Structured PTMs every month plus WhatsApp updates so parents are never out of the loop on their child's progress.</div><span class="ov-lk">Learn more →</span></div>
+    <div class="ov-item"><div class="ov-ic">🚀</div><div class="ov-t">Career Guidance &amp; Counseling</div><div class="ov-d">Stream selection, college counseling and career roadmap planning so students and parents make confident decisions.</div><span class="ov-lk">Learn more →</span></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- SMART BOARD FEATURE -->
+<section class="sec blk" id="courses">
+  <div class="fsplit">
+    <div>
+      <span class="ol rv">Digital Learning</span>
+      <h2 class="sh rv d1">Smart boards.<br><em>Smarter students.</em></h2>
+      <p class="sp rv d2">Our classrooms use interactive smart panels that turn every lesson into a visual experience — animated equations, live diagrams, experiment demos and instant quizzes, all on one screen.</p>
+      <ul class="check-list rv d3">
+        <li><span class="ck">✓</span>Animated concept explanations textbooks can't show</li>
+        <li><span class="ck">✓</span>Virtual science experiments with full visual detail</li>
+        <li><span class="ck">✓</span>Real-time quiz results to measure understanding instantly</li>
+        <li><span class="ck">✓</span>Recorded sessions available for revision any time</li>
+      </ul>
+      <a href="#contact" class="btn-p rv d4">Book a Smart Class Demo →</a>
+    </div>
+    <div class="fv rv d2">
+      <div class="fv-glow"></div>
+      <div class="sb" style="position:relative;z-index:1">
+        <div class="sb-top">📺 VERTEX SMART BOARD — PHYSICS CLASS 12</div>
+        <div class="sb-body">
+          <div style="font-size:.66rem;color:rgba(79,142,247,.45);margin-bottom:.35rem;font-weight:600">CHAPTER 13 — ELECTROMAGNETIC INDUCTION</div>
+          <div class="sb-eqn">ε = −N · dΦ<sub style="font-size:.7em">B</sub>/dt</div>
+          <div class="sb-sub">Faraday's Law · EMF induced by changing flux</div>
+          <div class="sb-graph">
+            <div class="sb-b" style="height:28%"></div>
+            <div class="sb-b" style="height:52%;animation-delay:.1s"></div>
+            <div class="sb-b" style="height:78%;animation-delay:.2s"></div>
+            <div class="sb-b" style="height:64%;animation-delay:.3s"></div>
+            <div class="sb-b" style="height:92%;animation-delay:.4s"></div>
+            <div class="sb-b" style="height:44%;animation-delay:.5s"></div>
+            <div class="sb-b" style="height:68%;animation-delay:.6s;background:rgba(244,180,0,.55)"></div>
+            <div class="sb-b" style="height:100%;animation-delay:.7s;background:rgba(244,180,0,.55)"></div>
+          </div>
+          <div class="sb-tags">
+            <span class="sb-tag" style="background:rgba(34,197,94,.1);color:#22c55e">✓ Concept Clear</span>
+            <span class="sb-tag" style="background:rgba(79,142,247,.1);color:#4F8EF7">▶ Play Experiment</span>
+            <span class="sb-tag" style="background:rgba(244,180,0,.1);color:#F4B400">📝 Take Quiz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- RESULTS SECTION -->
+<section class="sec blk" id="results">
+  <span class="ol rv">Student Achievements</span>
+  <h2 class="sh rv d1">Results that speak.<br><em>Every single year.</em></h2>
+  <p class="sp rv d2">Real marksheets, real students, real success — across CBSE, GSEB, ICSE, JEE and NEET.</p>
+
+  <div class="rscroll rv d3" style="margin-top:2.5rem">
+    <div class="rsfl"></div><div class="rsfr"></div>
+    <div class="rs-track">
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">96%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 12</div></div><div class="rc-bot"><div class="rc-nm">Ananya Sharma</div><div class="rc-cl">Science · PCM</div><div class="rc-bg">🏆 96.4%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a0f00,#4a2800)"><div class="rc-pct" style="color:#F4B400">JEE</div><div class="rc-bd" style="color:rgba(244,180,0,.65)">Main Qualified</div></div><div class="rc-bot"><div class="rc-nm">Rahul Patel</div><div class="rc-cl">PCM · JEE 2024</div><div class="rc-bg" style="color:#F4B400;background:rgba(244,180,0,.1)">🎯 92 %ile</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#001a0d,#004020)"><div class="rc-pct" style="color:#22c55e">94%</div><div class="rc-bd" style="color:rgba(34,197,94,.65)">GSEB · Std 10</div></div><div class="rc-bot"><div class="rc-nm">Dhruvi Shah</div><div class="rc-cl">Std 10 · GSEB</div><div class="rc-bg">🥇 94.2%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a002a,#400066)"><div class="rc-pct" style="color:#a855f7">NEET</div><div class="rc-bd" style="color:rgba(168,85,247,.65)">Qualified</div></div><div class="rc-bot"><div class="rc-nm">Priya Desai</div><div class="rc-cl">PCB · NEET 2024</div><div class="rc-bg" style="color:#a855f7;background:rgba(168,85,247,.1)">💊 570/720</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a0000,#4a0000)"><div class="rc-pct" style="color:#ef4444">98%</div><div class="rc-bd" style="color:rgba(239,68,68,.65)">ICSE · Class 10</div></div><div class="rc-bot"><div class="rc-nm">Arjun Mehta</div><div class="rc-cl">ICSE · Class 10</div><div class="rc-bg" style="color:#ef4444;background:rgba(239,68,68,.1)">⭐ 98.0%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">91%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 10</div></div><div class="rc-bot"><div class="rc-nm">Sneha Trivedi</div><div class="rc-cl">Class 10 · CBSE</div><div class="rc-bg">🎓 91.2%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#001a0d,#004020)"><div class="rc-pct" style="color:#22c55e">93%</div><div class="rc-bd" style="color:rgba(34,197,94,.65)">GSEB · Std 12</div></div><div class="rc-bot"><div class="rc-nm">Karan Solanki</div><div class="rc-cl">Std 12 · Science</div><div class="rc-bg">🔬 93.6%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a1400,#4a3c00)"><div class="rc-pct" style="color:#F4B400">JEE</div><div class="rc-bd" style="color:rgba(244,180,0,.65)">Advanced</div></div><div class="rc-bot"><div class="rc-nm">Veer Agarwal</div><div class="rc-cl">JEE Adv · 2024</div><div class="rc-bg" style="color:#F4B400;background:rgba(244,180,0,.1)">🚀 AIR 2840</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">97%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 12</div></div><div class="rc-bot"><div class="rc-nm">Pooja Verma</div><div class="rc-cl">Science · CBSE</div><div class="rc-bg">🌟 97.2%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#001a0d,#004020)"><div class="rc-pct" style="color:#22c55e">88%</div><div class="rc-bd" style="color:rgba(34,197,94,.65)">GSEB · Std 10</div></div><div class="rc-bot"><div class="rc-nm">Manan Thakkar</div><div class="rc-cl">Std 10 · GSEB</div><div class="rc-bg">📝 88.6%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a002a,#400066)"><div class="rc-pct" style="color:#a855f7">95%</div><div class="rc-bd" style="color:rgba(168,85,247,.65)">ICSE · Class 10</div></div><div class="rc-bot"><div class="rc-nm">Riya Kapoor</div><div class="rc-cl">ICSE · Class 10</div><div class="rc-bg" style="color:#a855f7;background:rgba(168,85,247,.1)">🎖 95.4%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">96%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 12</div></div><div class="rc-bot"><div class="rc-nm">Ananya Sharma</div><div class="rc-cl">Science · PCM</div><div class="rc-bg">🏆 96.4%</div></div></div>
+      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a0f00,#4a2800)"><div class="rc-pct" style="color:#F4B400">JEE</div><div class="rc-bd" style="color:rgba(244,180,0,.65)">Main Qualified</div></div><div class="rc-bot"><div class="rc-nm">Rahul Patel</div><div class="rc-cl">PCM · JEE 2024</div><div class="rc-bg" style="color:#F4B400;background:rgba(244,180,0,.1)">🎯 92 %ile</div></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- WHY VERTEX BENTO -->
+<section class="sec dark">
+  <span class="ol rv">Why Vertex</span>
+  <h2 class="sh rv d1">Built different.<br><em>Taught better.</em></h2>
+  <p class="sp rv d2">Everything at Vertex Education is designed around one thing — your child's genuine academic growth.</p>
+  <div class="bento rv d3">
+    <div class="bc sp2"><div class="bc-no">01</div><div class="bc-ic">👨‍🏫</div><div class="bc-t">Experienced Faculty — 25+ Teachers, 8+ Years Average</div><div class="bc-d">Every teacher at Vertex is handpicked for subject mastery and the rare ability to make complex concepts feel obvious. Small batches mean your child is genuinely known, seen, and helped — never lost in a crowd of 60.</div></div>
+    <div class="bc"><div class="bc-no">02</div><div class="bc-ic">🎯</div><div class="bc-t">Max 20 Per Batch</div><div class="bc-d">Real attention for every student. Teachers know their gaps, pace and goals by name.</div></div>
+    <div class="bc"><div class="bc-no">03</div><div class="bc-ic">📊</div><div class="bc-t">Weekly Tests + Tracking</div><div class="bc-d">Consistent testing builds exam confidence. Parents get reports after every cycle.</div></div>
+    <div class="bc"><div class="bc-no">04</div><div class="bc-ic">🖥️</div><div class="bc-t">Smart Board Classrooms</div><div class="bc-d">Digital panels in every class make visual learning the default, not the exception.</div></div>
+    <div class="bc"><div class="bc-no">05</div><div class="bc-ic">💡</div><div class="bc-t">Instant Doubt Solving</div><div class="bc-d">No question goes unanswered. Dedicated doubt sessions after every class.</div></div>
+    <div class="bc"><div class="bc-no">06</div><div class="bc-ic">👪</div><div class="bc-t">Monthly Parent Meetings</div><div class="bc-d">Every last Saturday. Structured PTMs keep parents fully informed and involved.</div></div>
+    <div class="bc sp2"><div class="bc-no">07</div><div class="bc-ic">📚</div><div class="bc-t">Premium Study Material — Included Free</div><div class="bc-d">Curated notes, practice sheets, past papers and chapter-wise question banks prepared by our expert faculty. Everything your child needs to score, included in the course fee at no extra cost.</div></div>
+    <div class="bc"><div class="bc-no">08</div><div class="bc-ic">🚀</div><div class="bc-t">Career Counseling</div><div class="bc-d">Stream selection, college guidance and JEE/NEET roadmaps for students and parents.</div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- PROGRAMS FEATURE -->
+<section class="sec blk" id="programs">
+  <div class="fsplit fl">
+    <div>
+      <span class="ol rv">Programs &amp; Activities</span>
+      <h2 class="sh rv d1">Learning that lives<br><em>beyond textbooks.</em></h2>
+      <p class="sp rv d2">Science fairs, concept activities, maths olympiad prep, career days, felicitation ceremonies — at Vertex, education is a rich experience, not just exam prep.</p>
+      <ul class="check-list rv d3">
+        <li><span style="color:var(--gold)">✦</span>Annual Science Fair with parent showcase</li>
+        <li><span style="color:var(--gold)">✦</span>Concept-through-activity sessions every month</li>
+        <li><span style="color:var(--gold)">✦</span>Career counseling day with industry experts</li>
+        <li><span style="color:var(--gold)">✦</span>Annual felicitation ceremony for achievers</li>
+        <li><span style="color:var(--gold)">✦</span>YouTube experiment video library (free access)</li>
+      </ul>
+      <a href="#contact" class="btn-p rv d4">Learn About Programs →</a>
+    </div>
+    <div class="fv rv d2">
+      <div class="fv-glow"></div>
+      <div class="ag" style="position:relative;z-index:1">
+        <div class="ac"><div class="ac-ic">🔬</div><div class="ac-t">Science Fair</div><div class="ac-d">Annual showcase with working models and live demos for parents</div></div>
+        <div class="ac"><div class="ac-ic">🧮</div><div class="ac-t">Maths Olympiad</div><div class="ac-d">IMO &amp; NTSE prep workshops with speed-solving practice</div></div>
+        <div class="ac"><div class="ac-ic">🎖️</div><div class="ac-t">Felicitation</div><div class="ac-d">Annual ceremony celebrating every student's milestone</div></div>
+        <div class="ac"><div class="ac-ic">🗣️</div><div class="ac-t">Career Day</div><div class="ac-d">Guest experts guide Class 10–12 on streams and careers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- TESTIMONIALS -->
+<section class="sec dark">
+  <span class="ol rv">Student &amp; Parent Stories</span>
+  <h2 class="sh rv d1">Families who made<br><em>the right choice.</em></h2>
+  <div class="tg">
+    <div class="tc ft rv"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-txt">"Vertex Education transformed my daughter's entire academic trajectory. The smart board classes, small batch attention, and monthly parent meetings — this is what real coaching feels like. She scored 96% in CBSE boards."</p><div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#2563EB,#4F8EF7)">P</div><div><div class="t-nm">Priya Mehta</div><div class="t-rl">Parent · CBSE Class 12</div></div></div></div>
+    <div class="tc rv d1"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-txt">"I cracked JEE Main in my first attempt. The mock test series, problem-solving sessions and the way teachers explain complex physics — nothing comes close. Best coaching in Chandkheda."</p><div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#92690a,#F4B400)">R</div><div><div class="t-nm">Rahul Sharma</div><div class="t-rl">JEE Main 2024 Qualifier</div></div></div></div>
+    <div class="tc rv d2"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-txt">"The ICSE dedicated batch was exactly what we needed. Separate batch, specialist teacher, ICSE-specific pattern. My son scored 98% in Class 10. Couldn't have asked for more."</p><div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#7e22ce,#9333ea)">A</div><div><div class="t-nm">Anjali Patel</div><div class="t-rl">Parent · ICSE Class 10</div></div></div></div>
+    <div class="tc rv"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-txt">"Monthly parent meetings keep us completely in the loop. We always know how our child is doing, what needs work, and what's going well. It's a genuine three-way partnership."</p><div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#15803d,#22c55e)">N</div><div><div class="t-nm">Nisha Trivedi</div><div class="t-rl">Parent · Foundation Program</div></div></div></div>
+    <div class="tc rv d1"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-txt">"NEET prep at Vertex is outstanding. Biology faculty is exceptional. Every concept explained with patience and visual clarity on the smart board. Qualified NEET first attempt — 570/720."</p><div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#dc2626,#ef4444)">D</div><div><div class="t-nm">Dhruvi Joshi</div><div class="t-rl">NEET 2024 Qualifier</div></div></div></div>
+    <div class="tc rv d2"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-txt">"Smart board learning changed everything for my son. He actually looks forward to class now. Science experiments on screen, interactive maths — it's unlike any coaching he's had before."</p><div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#0369a1,#0284c7)">K</div><div><div class="t-nm">Kiran Shah</div><div class="t-rl">Parent · GSEB Std 9</div></div></div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- PROCESS -->
+<section class="sec mid" style="text-align:center">
+  <span class="ol rv">How to Start</span>
+  <h2 class="sh rv d1" style="text-align:center">From inquiry to<br><em>first class in 5 steps.</em></h2>
+  <div class="prlist">
+    <div class="pr rv"><div class="pr-no">1</div><div><div class="pr-t">Inquiry — Call, WhatsApp or fill the form</div><div class="pr-d">Tell us your child's class, board and subjects. We respond within 24 hours.</div></div></div>
+    <div class="pr rv d1"><div class="pr-no">2</div><div><div class="pr-t">Free Counseling Session</div><div class="pr-d">A senior faculty member assesses the student and recommends the right batch and program.</div></div></div>
+    <div class="pr rv d2"><div class="pr-no">3</div><div><div class="pr-t">Free Demo Class — No Obligation</div><div class="pr-d">Experience our smart board classroom and teaching style completely free before you decide.</div></div></div>
+    <div class="pr rv"><div class="pr-no">4</div><div><div class="pr-t">Enrollment &amp; Orientation</div><div class="pr-d">Simple enrollment, collect study materials, meet your batch and faculty. You're part of the family.</div></div></div>
+    <div class="pr rv d1" style="border-bottom:none"><div class="pr-no" style="background:rgba(244,180,0,.12);border-color:rgba(244,180,0,.28);color:var(--gold);font-size:1.1rem">🏆</div><div><div class="pr-t">Academic Success</div><div class="pr-d">With consistent effort and our expert guidance you hit your goals — board ranks, JEE/NEET qualifications, and beyond.</div></div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- FAQ -->
+<section class="sec blk" style="text-align:center">
+  <span class="ol rv">FAQ</span>
+  <h2 class="sh rv d1" style="text-align:center">Still have <em>questions?</em></h2>
+  <div class="fql" style="text-align:left">
+    <div class="fi"><button class="fq" onclick="tf(this)">Do you have separate batches for ICSE?<span class="fi-ic">+</span></button><div class="fa">Yes — we have dedicated ICSE-only batches for Class 9 and 10 with specialist faculty trained specifically in the ICSE exam pattern, analytical approach, and marking scheme.</div></div>
+    <div class="fi"><button class="fq" onclick="tf(this)">What is the maximum batch size?<span class="fi-ic">+</span></button><div class="fa">All batches are capped at 20 students. This is non-negotiable — small batches are the foundation of our quality and the reason every student gets genuine personal attention.</div></div>
+    <div class="fi"><button class="fq" onclick="tf(this)">Is there a free demo class?<span class="fi-ic">+</span></button><div class="fa">Absolutely. Every prospective student can attend one free demo class with no obligation. Experience our smart board classroom and teaching quality before you decide.</div></div>
+    <div class="fi"><button class="fq" onclick="tf(this)">How often are parent meetings held?<span class="fi-ic">+</span></button><div class="fa">We hold structured Parent–Teacher Meetings every month on the last Saturday. Between PTMs, test results and updates are shared via WhatsApp within 24 hours.</div></div>
+    <div class="fi"><button class="fq" onclick="tf(this)">Do you teach GSEB in Gujarati medium?<span class="fi-ic">+</span></button><div class="fa">Yes. We offer coaching in both Gujarati and English medium for all GSEB batches. Our faculty can switch between mediums based on student comfort.</div></div>
+    <div class="fi"><button class="fq" onclick="tf(this)">Is study material included in the fee?<span class="fi-ic">+</span></button><div class="fa">Yes. Notes, practice sheets, chapter-wise question banks and previous year papers are all included in the course fee at no extra cost.</div></div>
+    <div class="fi"><button class="fq" onclick="tf(this)">When do new batches start?<span class="fi-ic">+</span></button><div class="fa">New batches start in June–July and January–February. Contact us to know the exact dates and seat availability for your preferred course and board.</div></div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- CONTACT -->
+<section class="sec dark" id="contact">
+  <span class="ol rv">Get Started</span>
+  <h2 class="sh rv d1">Start your child's<br><em>success journey today.</em></h2>
+  <p class="sp rv d2">Fill the form and we'll reach you within 24 hours to schedule a free counseling session and demo class.</p>
+  <div class="cw">
+    <div class="fb rv">
+      <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:1.4rem">📋 Student Enrollment Inquiry</h3>
+      <!-- TO SEND REAL EMAILS (free):
+           Change <form id="form"> to:
+           <form action="https://formsubmit.co/YOUR@EMAIL.com" method="POST">
+           Add inside form: <input type="hidden" name="_autoresponse" value="Thank you! Vertex Education will contact you within 24 hours.">
+           <input type="hidden" name="_subject" value="New Enrollment Inquiry - Vertex Education"> -->
+      <form id="form" novalidate>
+        <div class="fr">
+          <div class="fg"><label>Student Name *</label><input type="text" name="student_name" placeholder="Full name" required/></div>
+          <div class="fg"><label>Parent Name *</label><input type="text" name="parent_name" placeholder="Guardian name" required/></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 9xxxxxxxx" required/></div>
+          <div class="fg"><label>Email * <span style="font-size:.62rem;color:var(--muted);text-transform:none;letter-spacing:0">(thank-you mail sent here)</span></label><input type="email" name="email" placeholder="you@example.com" required/></div>
+        </div>
+        <div class="fg"><label>School Name *</label><input type="text" name="school" placeholder="e.g. DPS Bopal, Navneet School…" required/></div>
+        <div class="fr">
+          <div class="fg"><label>Class / Standard *</label>
+            <select name="class" required>
+              <option value="">Select class</option>
+              <option>Class 6</option><option>Class 7</option><option>Class 8</option>
+              <option>Class 9</option><option>Class 10</option>
+              <option>Class 11</option><option>Class 12</option>
+              <option>JEE / NEET Dropper</option>
+            </select>
+          </div>
+          <div class="fg"><label>Board *</label>
+            <div class="chips">
+              <button type="button" class="chip" onclick="sb(this,'CBSE')">CBSE</button>
+              <button type="button" class="chip" onclick="sb(this,'GSEB')">GSEB</button>
+              <button type="button" class="chip" onclick="sb(this,'ICSE')">ICSE</button>
+              <button type="button" class="chip" onclick="sb(this,'JEE')">JEE</button>
+              <button type="button" class="chip" onclick="sb(this,'NEET')">NEET</button>
+            </div>
+            <input type="hidden" name="board" id="bv"/>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Subjects <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted)">(select all that apply)</span></label>
+          <div class="sgrid">
+            <label class="sr"><input type="checkbox" name="subjects" value="Mathematics"/> Mathematics</label>
+            <label class="sr"><input type="checkbox" name="subjects" value="Science"/> Science</label>
+            <label class="sr"><input type="checkbox" name="subjects" value="Physics"/> Physics</label>
+            <label class="sr"><input type="checkbox" name="subjects" value="Chemistry"/> Chemistry</label>
+            <label class="sr"><input type="checkbox" name="subjects" value="Biology"/> Biology</label>
+            <label class="sr"><input type="checkbox" name="subjects" value="English"/> English</label>
+            <label class="sr"><input type="checkbox" name="subjects" value="All Subjects"/> All Subjects</label>
+            <label class="sr"><input type="checkbox" name="subjects" value="Maths+Science"/> Maths + Science</label>
+          </div>
+        </div>
+        <div class="fg"><label>Other Subject</label><input type="text" name="other_subject" placeholder="e.g. Computer Science, Sanskrit…"/></div>
+        <div class="fg"><label>Message (optional)</label><textarea name="message" placeholder="Goals, preferred timing, or any queries…"></textarea></div>
+        <div style="display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.35rem">
+          <input type="checkbox" id="ag" style="margin-top:3px;width:14px;height:14px;accent-color:var(--blue);flex-shrink:0"/>
+          <label for="ag" style="font-size:.76rem;color:var(--muted);line-height:1.6">I agree to be contacted by Vertex Education via phone, WhatsApp or email.</label>
+        </div>
+        <button type="submit" class="fsub"><span id="bt">Send Inquiry →</span></button>
+        <div class="suc" id="sc">✅ Thank you! We'll reach you within 24 hours to schedule your free counseling session and demo class.</div>
+      </form>
+    </div>
+    <div class="ilist rv d2">
+      <div class="ii"><div class="ii-ic">📍</div><div><div class="ii-lb">Address</div><div class="ii-v">G-17, Omkar Lotus, Motera Road,<br>Nigam Nagar, Chandkheda,<br>Ahmedabad, Gujarat 382424</div></div></div>
+      <div class="ii"><div class="ii-ic">📞</div><div><div class="ii-lb">Phone</div><div class="ii-v"><a href="tel:+919000000000">+91 90000 00000</a></div></div></div>
+      <div class="ii"><div class="ii-ic">✉️</div><div><div class="ii-lb">Email</div><div class="ii-v"><a href="mailto:info@vertexeducation.in">info@vertexeducation.in</a></div></div></div>
+      <div class="ii"><div class="ii-ic">🕐</div><div><div class="ii-lb">Hours</div><div class="ii-v">Mon–Sat: 7:00 AM – 9:00 PM<br>Sunday: 9:00 AM – 1:00 PM</div></div></div>
+      <a href="https://wa.me/919000000000?text=Hi%20Vertex%20Education!%20I%20want%20to%20enroll%20my%20child." class="wa-b" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Message on WhatsApp
+      </a>
+      <a href="https://maps.google.com/?q=Omkar+Lotus+Chandkheda+Ahmedabad" target="_blank" rel="noopener" class="map-l">🗺️ Open in Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-glow"></div>
+  <div class="ft-cta rv">
+    <h2>Built for your child's <em>next milestone…</em><br><span style="color:var(--muted);font-size:.65em;font-weight:400;font-family:'Inter',sans-serif;letter-spacing:-.01em">and every one after it.</span></h2>
+    <p>Join 500+ students at Chandkheda's most trusted coaching institute.</p>
+    <a href="#contact" class="btn-p" style="display:inline-flex">Enroll Now →</a>
+  </div>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div style="display:flex;align-items:center;gap:.55rem;font-size:1rem;font-weight:700">
+        <div style="width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        Vertex <span style="color:var(--gold)">Education</span>
+      </div>
+      <p>Best coaching in Chandkheda, Ahmedabad. CBSE, GSEB, ICSE, JEE &amp; NEET since 2014.</p>
+      <div class="addr">G-17, Omkar Lotus, Motera Road,<br>Nigam Nagar, Chandkheda, Ahmedabad 382424</div>
+    </div>
+    <div class="ft-col"><h4>Navigate</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#courses">Courses</a></li><li><a href="#results">Results</a></li><li><a href="#programs">Programs</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Courses</h4><ul><li><a href="#contact">CBSE Coaching</a></li><li><a href="#contact">GSEB Coaching</a></li><li><a href="#contact">ICSE Batches</a></li><li><a href="#contact">JEE Prep</a></li><li><a href="#contact">NEET Coaching</a></li><li><a href="#contact">Foundation 6–8</a></li></ul></div>
+    <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:+919000000000">+91 90000 00000</a></li><li><a href="mailto:info@vertexeducation.in">info@vertexeducation.in</a></li><li><a href="https://wa.me/919000000000" target="_blank">WhatsApp</a></li><li><a href="https://maps.google.com/?q=Chandkheda+Ahmedabad" target="_blank">Directions</a></li></ul></div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2024 Vertex Education · Chandkheda, Ahmedabad, Gujarat · Learn at Ease</span>
+    <div class="srow"><a href="#" class="soc">f</a><a href="#" class="soc">in</a><a href="#" class="soc">▶</a><a href="#" class="soc">𝕏</a></div>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cur'),cr=document.getElementById('cur-r');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(ar);})();
+
+/* SCROLL */
+window.addEventListener('scroll',()=>{
+  const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('spb').style.width=p+'%';
+  document.getElementById('nav').classList.toggle('s',window.scrollY>60);
+  document.getElementById('btt').classList.toggle('sh',window.scrollY>400);
+});
+
+/* PARTICLES */
+const pc=document.getElementById('pts');
+for(let i=0;i<20;i++){
+  const p=document.createElement('div');p.className='pt';
+  const s=Math.random()*3+1;
+  p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:${Math.random()*.35+.05};animation-duration:${Math.random()*18+10}s;animation-delay:-${Math.random()*18}s`;
+  pc.appendChild(p);
+}
+
+/* REVEAL */
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');x.target.querySelectorAll('[data-target]').forEach(startCount);}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+/* Hero reveals immediately */
+document.querySelector('.hero').querySelectorAll('.rv').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),i*80+100));
+
+/* COUNT UP */
+function startCount(el){
+  if(el.dataset.counted)return;el.dataset.counted='1';
+  const t=+el.dataset.target,d=1800,s=performance.now();
+  (function tick(n){const p=Math.min((n-s)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t);if(p<1)requestAnimationFrame(tick);else el.textContent=t;})(s);
+}
+setTimeout(()=>document.querySelectorAll('.cnt[data-target]').forEach(startCount),700);
+
+/* BURGER */
+const bg=document.getElementById('bg'),nl=document.getElementById('nl'),nr=document.getElementById('nr');
+bg.addEventListener('click',()=>{bg.classList.toggle('o');nl.classList.toggle('o');nr.classList.toggle('o');});
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{bg.classList.remove('o');nl.classList.remove('o');nr.classList.remove('o');}));
+
+/* FAQ */
+function tf(btn){const item=btn.parentElement,was=item.classList.contains('op');document.querySelectorAll('.fi').forEach(i=>i.classList.remove('op'));if(!was)item.classList.add('op');}
+
+/* BOARD CHIPS */
+function sb(el,val){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');document.getElementById('bv').value=val;}
+
+/* FORM */
+document.getElementById('form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('bt');
+  if(!this.student_name.value.trim()||!this.phone.value.trim()||!document.getElementById('ag').checked){
+    alert('Please fill all required fields and agree to be contacted.');return;
+  }
+  btn.textContent='Sending…';
+  this.querySelector('.fsub').disabled=true;
+  await new Promise(r=>setTimeout(r,1400));
+  document.getElementById('sc').style.display='block';
+  document.getElementById('sc').scrollIntoView({behavior:'smooth',block:'nearest'});
+  btn.textContent='✓ Sent!';
+  const fsub=this.querySelector('.fsub');
+  fsub.style.background='rgba(34,197,94,.12)';
+  fsub.style.color='#22c55e';
+});
+
+/* SMOOTH ANCHOR SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
