@@ -2,376 +2,351 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Experiments | Vertex Education – Chandkheda Ahmedabad</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<title>Science Experiments | Vertex Education – Coaching Classes Chandkheda Ahmedabad</title>
+<meta name="description" content="Watch science experiment videos by Vertex Education — Physics, Chemistry, Biology for CBSE, GSEB, ICSE students in Chandkheda, Ahmedabad."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
 <style>
-:root{--bg:#080808;--bg2:#0e0e0e;--w:#fff;--off:rgba(255,255,255,.55);--muted:rgba(255,255,255,.3);--bdr:rgba(255,255,255,.08);--bdr2:rgba(255,255,255,.13);--gold:#F4B400;--blue:#4F8EF7;--grn:#22c55e;--ease:cubic-bezier(0.16,1,0.3,1);}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--w);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}img{display:block;max-width:100%;}button,a{cursor:none;}
-#cur{position:fixed;z-index:9999;top:0;left:0;width:8px;height:8px;background:var(--w);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
-#cur-r{position:fixed;z-index:9998;top:0;left:0;width:32px;height:32px;border:1px solid rgba(255,255,255,.18);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:all .18s var(--ease);}
-body:has(a:hover) #cur,body:has(button:hover) #cur{width:18px;height:18px;}
-#spb{position:fixed;top:0;left:0;height:1px;background:var(--w);z-index:999;width:0%;}
+/* VIDEO GRID */
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+@media(max-width:900px){.vgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:540px){.vgrid{grid-template-columns:1fr;}}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.3rem 4vw;transition:all .4s var(--ease);}
-nav.s{background:rgba(8,8,8,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);padding:.9rem 4vw;}
-.n-logo{display:flex;align-items:center;gap:.55rem;font-size:1rem;font-weight:700;}
-.lb-box{width:27px;height:27px;border-radius:7px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center;}
-.lb-box svg{width:15px;height:15px;fill:white;}.gd{color:var(--gold);}
-.n-links{display:flex;align-items:center;gap:1.8rem;list-style:none;}
-.n-links a{font-size:.83rem;font-weight:500;color:var(--off);transition:color .18s;}
-.n-links a:hover,.n-links a.act{color:var(--w);}
-.n-r{display:flex;gap:.7rem;}
-.btn-g{border:1px solid var(--bdr2);border-radius:50px;padding:.48rem 1.15rem;font-size:.8rem;font-weight:600;color:var(--off);background:transparent;font-family:'Inter',sans-serif;transition:all .18s;}
-.btn-g:hover{color:var(--w);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.05);}
-.btn-w{background:var(--w);color:#000;border:none;border-radius:50px;padding:.5rem 1.25rem;font-size:.8rem;font-weight:700;font-family:'Inter',sans-serif;transition:all .2s;}
-.btn-w:hover{background:rgba(255,255,255,.88);transform:translateY(-1px);}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;}
-.burger span{display:block;width:22px;height:1.5px;background:var(--w);border-radius:2px;transition:all .3s;}
-.burger.o span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-.burger.o span:nth-child(2){opacity:0;}
-.burger.o span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-@media(max-width:860px){
-  .n-links,.n-r{display:none;}
-  .n-links.o{display:flex;flex-direction:column;gap:2rem;position:fixed;inset:0;background:rgba(8,8,8,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;z-index:800;}
-  .n-links.o a{font-size:1.1rem;color:var(--w);}
-  .n-r.o{display:flex;flex-direction:column;gap:.7rem;position:fixed;bottom:3rem;left:50%;transform:translateX(-50%);z-index:800;}
-  .burger{display:flex;}
-}
+.vc{background:var(--bg2);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;transition:border-color .22s,transform .28s;}
+.vc:hover{border-color:var(--bdr2);transform:translateY(-5px);}
 
-/* HERO */
-.ph{min-height:40vh;display:flex;align-items:flex-end;padding:9rem 5vw 4rem;position:relative;overflow:hidden;}
-.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black,transparent);}
-.ph-glow{position:absolute;top:-20%;left:35%;width:700px;height:500px;background:radial-gradient(ellipse at center,rgba(79,142,247,.08),transparent 65%);}
-.pill{display:inline-flex;align-items:center;gap:.42rem;border:1px solid var(--bdr2);border-radius:50px;padding:.28rem .85rem;font-size:.71rem;font-weight:600;color:var(--off);letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.2rem;}
-.pill .dot{width:5px;height:5px;border-radius:50%;background:var(--grn);animation:bl 2s infinite;}
-@keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
-.sh{font-size:clamp(2rem,5vw,3.8rem);font-weight:900;line-height:1.07;letter-spacing:-.03em;margin-bottom:.8rem;}
-.sh em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;}
-.sp{font-size:.95rem;color:var(--off);line-height:1.75;max-width:500px;}
+/* YouTube thumbnail wrapper */
+.vthumb{position:relative;padding-bottom:56.25%;background:#000;overflow:hidden;}
+.vthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity .3s;}
+.vc:hover .vthumb img{opacity:.7;}
+.vthumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;}
+.play-btn{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:all .22s;backdrop-filter:blur(6px);}
+.vc:hover .play-btn{background:rgba(255,0,0,.75);border-color:rgba(255,0,0,.75);transform:scale(1.08);}
+.play-lbl{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.55);}
 
-/* MARQUEE */
-.mq{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:1rem 0;overflow:hidden;background:var(--bg2);}
-.mq-t{display:flex;gap:2.8rem;width:max-content;animation:mqs 28s linear infinite;}
-@keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mi{display:flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;}
-.mi .md{color:var(--gold);}
+.vinfo{padding:1.1rem 1.3rem 1.3rem;}
+.v-stag{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .62rem;border-radius:50px;margin-bottom:.55rem;}
+.v-title{font-weight:700;font-size:.95rem;margin-bottom:.28rem;line-height:1.4;}
+.v-desc{font-size:.8rem;color:var(--off);line-height:1.6;margin-bottom:.75rem;}
+.v-meta{display:flex;align-items:center;gap:.75rem;font-size:.72rem;color:var(--muted);font-weight:600;}
 
-/* REVEAL */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
-.rv.in{opacity:1;transform:translateY(0);}
-.d1{transition-delay:.07s;}.d2{transition-delay:.14s;}.d3{transition-delay:.21s;}.d4{transition-delay:.28s;}.d5{transition-delay:.35s;}.d6{transition-delay:.42s;}
+/* LIGHTBOX */
+#lb{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px);}
+#lb.open{opacity:1;pointer-events:auto;}
+#lb .lb-in{width:min(88vw,860px);position:relative;}
+#lb .lb-x{position:absolute;top:-2.8rem;right:0;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.6rem;font-family:'Inter',sans-serif;font-weight:300;transition:color .18s;}
+#lb .lb-x:hover{color:var(--w);}
+#lb iframe{width:100%;aspect-ratio:16/9;border:none;border-radius:14px;}
 
-/* SECTION */
-.sec{padding:5rem 5vw;}
-.sec-top{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;}
-.platform-pill{display:inline-flex;align-items:center;gap:.45rem;border-radius:50px;padding:.4rem 1.1rem;font-size:.82rem;font-weight:800;}
-.sec-top h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;letter-spacing:-.025em;}
-.sec-top h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;}
-.sec-sub{font-size:.84rem;color:var(--muted);margin-bottom:2rem;line-height:1.65;}
-.sec-sub code{background:rgba(255,255,255,.08);border-radius:4px;padding:.1rem .35rem;font-size:.8rem;}
+/* UPLOAD GUIDE */
+.guide{background:rgba(244,180,0,.06);border:1px solid rgba(244,180,0,.18);border-radius:16px;padding:1.5rem 1.8rem;margin-bottom:2.5rem;}
+.guide h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem;color:var(--gold);}
+.guide-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+@media(max-width:700px){.guide-steps{grid-template-columns:1fr 1fr;}}
+.gs{display:flex;flex-direction:column;gap:.3rem;}
+.gs-n{width:26px;height:26px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;margin-bottom:.15rem;}
+.gs-t{font-weight:700;font-size:.82rem;}
+.gs-d{font-size:.76rem;color:var(--muted);line-height:1.5;}
+.gs-d code{background:rgba(255,255,255,.08);border-radius:4px;padding:.1rem .35rem;font-size:.74rem;color:var(--blue);}
 
-/* INSTAGRAM GRID — portrait 9:16 */
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-@media(max-width:780px){.ig-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:460px){.ig-grid{grid-template-columns:1fr;}}
-
-.ig-card{display:block;background:var(--bg2);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;transition:border-color .22s,transform .28s,box-shadow .28s;}
-.ig-card:hover{border-color:rgba(225,48,108,.4);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5);}
-.ig-thumb{position:relative;aspect-ratio:9/16;background:linear-gradient(160deg,#1a0828,#2d0a3e);overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.ig-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.65;transition:opacity .3s,transform .5s var(--ease);}
-.ig-card:hover .ig-thumb img{opacity:.85;transform:scale(1.04);}
-.ig-ph{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;padding:1rem;}
-.ig-ph .ic{font-size:2.8rem;}
-.ig-ph .lb{font-size:.68rem;color:rgba(255,255,255,.22);font-weight:500;line-height:1.5;}
-.ig-ov{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:rgba(0,0,0,.15);transition:background .2s;}
-.ig-card:hover .ig-ov{background:rgba(0,0,0,.04);}
-.ig-play{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:1.2rem;backdrop-filter:blur(8px);transition:all .22s;}
-.ig-card:hover .ig-play{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);border-color:transparent;transform:scale(1.1);}
-.ig-play-lb{font-size:.66rem;font-weight:600;color:rgba(255,255,255,.4);}
-.ig-badge{position:absolute;top:.7rem;left:.7rem;z-index:3;background:linear-gradient(135deg,#833ab4,#fd1d1d);border-radius:50px;padding:.2rem .65rem;font-size:.63rem;font-weight:800;color:#fff;}
-.ig-info{padding:1rem 1.1rem 1.2rem;}
-.ig-title{font-weight:700;font-size:.9rem;line-height:1.4;margin-bottom:.35rem;}
-.ig-cta{font-size:.73rem;font-weight:700;color:rgba(225,48,108,.75);transition:color .18s;display:flex;align-items:center;gap:.25rem;}
-.ig-card:hover .ig-cta{color:#fd1d1d;}
-
-/* YOUTUBE GRID — landscape 16:9 */
-.yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-@media(max-width:780px){.yt-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:460px){.yt-grid{grid-template-columns:1fr;}}
-
-.yt-card{display:block;background:var(--bg2);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;transition:border-color .22s,transform .28s,box-shadow .28s;}
-.yt-card:hover{border-color:rgba(255,0,0,.35);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5);}
-.yt-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(160deg,#1a0000,#2d0808);overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.yt-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.65;transition:opacity .3s,transform .5s;}
-.yt-card:hover .yt-thumb img{opacity:.85;transform:scale(1.04);}
-.yt-ph{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.45rem;text-align:center;padding:.8rem;}
-.yt-ph .ic{font-size:2.2rem;}
-.yt-ph .lb{font-size:.67rem;color:rgba(255,255,255,.22);font-weight:500;line-height:1.5;}
-.yt-ov{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.55rem;background:rgba(0,0,0,.15);transition:background .2s;}
-.yt-card:hover .yt-ov{background:rgba(0,0,0,.04);}
-.yt-play{width:52px;height:52px;border-radius:50%;background:rgba(255,0,0,.85);display:flex;align-items:center;justify-content:center;font-size:1.15rem;transition:all .22s;}
-.yt-card:hover .yt-play{background:#ff0000;transform:scale(1.1);}
-.yt-play-lb{font-size:.66rem;font-weight:600;color:rgba(255,255,255,.4);}
-.yt-badge{position:absolute;top:.7rem;left:.7rem;z-index:3;background:#ff0000;border-radius:50px;padding:.2rem .65rem;font-size:.63rem;font-weight:800;color:#fff;}
-.yt-info{padding:1rem 1.1rem 1.2rem;}
-.yt-title{font-weight:700;font-size:.9rem;line-height:1.4;margin-bottom:.35rem;}
-.yt-cta{font-size:.73rem;font-weight:700;color:rgba(255,60,60,.75);transition:color .18s;display:flex;align-items:center;gap:.25rem;}
-.yt-card:hover .yt-cta{color:#ff4444;}
-
-/* DIVIDER */
-.sdiv{border:none;border-top:1px solid var(--bdr);margin:0;}
-
-/* FOLLOW ROW */
-.follow-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:2.5rem;}
-.follow-row span{font-size:.81rem;color:var(--muted);font-weight:600;}
-.fa-btn{display:inline-flex;align-items:center;gap:.4rem;border-radius:50px;padding:.4rem 1.05rem;font-size:.79rem;font-weight:700;transition:all .18s;}
-
-/* WA FLOAT */
-.wa-fl{position:fixed;bottom:2rem;right:2rem;z-index:800;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,.35);animation:waf 2.5s ease-in-out infinite;}
-.wa-fl:hover{transform:scale(1.1) translateY(-3px);animation:none;}
-@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-#btt{position:fixed;bottom:2rem;left:2rem;z-index:800;width:36px;height:36px;border-radius:50%;border:1px solid var(--bdr2);background:rgba(255,255,255,.05);color:var(--off);display:flex;align-items:center;justify-content:center;font-size:.9rem;opacity:0;pointer-events:none;transition:all .25s;}
-#btt.sh{opacity:1;pointer-events:auto;}
-#btt:hover{background:rgba(255,255,255,.1);color:var(--w);}
-
-/* FOOTER */
-footer{background:#000;border-top:1px solid var(--bdr);padding:3.5rem 5vw 2rem;}
-.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-@media(max-width:860px){.ft-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
-@media(max-width:460px){.ft-grid{grid-template-columns:1fr;}}
-.ft-brand p{font-size:.82rem;color:var(--muted);line-height:1.75;max-width:220px;margin-top:.7rem;}
-.ft-brand .addr{font-size:.73rem;color:rgba(255,255,255,.2);margin-top:.6rem;line-height:1.6;}
-.ft-col h4{font-size:.73rem;font-weight:700;color:var(--off);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.95rem;}
-.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
-.ft-col ul a{font-size:.81rem;color:var(--muted);transition:color .16s;}
-.ft-col ul a:hover{color:var(--w);}
-.ft-bot{border-top:1px solid var(--bdr);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--muted);flex-wrap:wrap;gap:.7rem;}
-.srow{display:flex;gap:.6rem;}
-.soc{width:30px;height:30px;border-radius:50%;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:all .16s;}
-.soc:hover{border-color:var(--bdr2);color:var(--w);}
+/* STATS */
+.ex-stats{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.es{background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;padding:.9rem 1.3rem;display:flex;align-items:center;gap:.7rem;}
+.es-n{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;color:var(--w);}
+.es-l{font-size:.76rem;color:var(--muted);font-weight:500;}
 </style>
 </head>
 <body>
-<div id="cur"></div><div id="cur-r"></div><div id="spb"></div>
-<a href="https://wa.me/919000000000" class="wa-fl" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+<div id="spb"></div>
+<a href="https://wa.me/919000000000" class="wa-fl" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<nav id="nav">
-  <a href="index.html" class="n-logo">
-    <div class="lb-box"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-    <span>Vertex <span class="gd">Education</span></span>
-  </a>
-  <ul class="n-links" id="nl">
-    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="batches.html">Batches</a></li><li><a href="experiments.html" class="act">Experiments</a></li>
-    <li><a href="programs.html">Programs</a></li><li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="n-r" id="nr">
-    <a href="contact.html" class="btn-g">Free Demo</a>
-    <a href="contact.html" class="btn-w">Enroll Now</a>
+<!-- LIGHTBOX -->
+<div id="lb" onclick="closeLb(event)">
+  <div class="lb-in">
+    <button class="lb-x" onclick="closeLb()">✕</button>
+    <iframe id="lbf" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="n-logo"><div class="lb" style="width:27px;height:27px;border-radius:7px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><span>Vertex <span class="gd">Education</span></span></a>
+  <ul class="n-links" id="nl">
+    <li><a href="index.html">Home</a></li><li><a href="notes.html">Notes</a></li>
+    <li><a href="experiments.html" class="act">Experiments</a></li><li><a href="programs.html">Programs</a></li>
+    <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="n-r" id="nr"><a href="contact.html" class="btn-w">Enroll Now →</a></div>
   <button class="burger" id="bg"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
 <div class="ph">
-  <div class="ph-grid"></div><div class="ph-glow"></div>
-  <div style="position:relative;z-index:2;max-width:700px;">
-    <div class="pill rv"><div class="dot"></div>Instagram Reels &amp; YouTube Videos</div>
-    <h1 class="sh rv d1">Science experiments<br>made <em>visual &amp; fun.</em></h1>
-    <p class="sp rv d2">Tap any card to watch. Reels open on Instagram. Videos open on YouTube.</p>
+  <div class="ph-grid"></div><div class="ph-glow" style="left:30%"></div>
+  <div class="ph-content">
+    <div class="pill rv"><div class="dot"></div>Visual Learning · Free for All Students</div>
+    <h1 class="sh rv d1" style="font-size:clamp(2.2rem,5vw,4rem)">Science experiments<br>made <em>visual &amp; fun.</em></h1>
+    <p class="sp rv d2" style="margin-bottom:0">Watch our faculty demonstrate Physics, Chemistry and Biology experiments — making complex concepts easy to understand for CBSE, GSEB &amp; ICSE boards.</p>
   </div>
 </div>
 
 <div class="mq"><div class="mq-t">
-  <span class="mi">📱 Instagram Reels <span class="md">✦</span></span><span class="mi">▶ YouTube Videos <span class="md">✦</span></span><span class="mi">Tap to Watch <span class="md">✦</span></span><span class="mi">CBSE · GSEB · ICSE <span class="md">✦</span></span><span class="mi">Free for All <span class="md">✦</span></span>
-  <span class="mi">📱 Instagram Reels <span class="md">✦</span></span><span class="mi">▶ YouTube Videos <span class="md">✦</span></span><span class="mi">Tap to Watch <span class="md">✦</span></span><span class="mi">CBSE · GSEB · ICSE <span class="md">✦</span></span><span class="mi">Free for All <span class="md">✦</span></span>
+  <span class="mi">Physics Experiments <span class="md">✦</span></span><span class="mi">Chemistry Practicals <span class="md">✦</span></span><span class="mi">Biology Dissections <span class="md">✦</span></span><span class="mi">Maths Concepts <span class="md">✦</span></span><span class="mi">CBSE Lab Work <span class="md">✦</span></span><span class="mi">GSEB Science <span class="md">✦</span></span><span class="mi">ICSE Practicals <span class="md">✦</span></span><span class="mi">Smart Board Demos <span class="md">✦</span></span>
+  <span class="mi">Physics Experiments <span class="md">✦</span></span><span class="mi">Chemistry Practicals <span class="md">✦</span></span><span class="mi">Biology Dissections <span class="md">✦</span></span><span class="mi">Maths Concepts <span class="md">✦</span></span><span class="mi">CBSE Lab Work <span class="md">✦</span></span><span class="mi">GSEB Science <span class="md">✦</span></span>
 </div></div>
 
-
-<!-- ══════════════════════════════════════════
-     SECTION 1 — INSTAGRAM REELS
-     Still placeholders — waiting on links + cover
-     screenshots. See videos-data.js sibling file
-     for how the YouTube section auto-builds itself;
-     Instagram will work the same way once ready.
-     ══════════════════════════════════════════ -->
-<section class="sec" id="instagram">
-
-  <div class="sec-top rv">
-    <div class="platform-pill" style="background:linear-gradient(135deg,#833ab4,#fd1d1d);color:#fff;">
-      📱 Instagram Reels
+<section class="sec">
+  <!-- UPLOAD GUIDE -->
+  <div class="guide rv">
+    <h3>📹 How to Add Your Own Experiment Videos — 4 Simple Steps</h3>
+    <div class="guide-steps">
+      <div class="gs"><div class="gs-n">1</div><div class="gs-t">Record the experiment</div><div class="gs-d">Use your phone to record in the classroom or lab. Landscape mode recommended.</div></div>
+      <div class="gs"><div class="gs-n">2</div><div class="gs-t">Upload to YouTube</div><div class="gs-d">YouTube → Upload → Set visibility to <code>Unlisted</code> (only people with link can see).</div></div>
+      <div class="gs"><div class="gs-n">3</div><div class="gs-t">Copy the Video ID</div><div class="gs-d">From <code>youtube.com/watch?v=VIDEO_ID</code> — copy the ID part after <code>?v=</code></div></div>
+      <div class="gs"><div class="gs-n">4</div><div class="gs-t">Paste in this file</div><div class="gs-d">Find <code>dQw4w9WgXcQ</code> in experiments.html → replace with your copied ID. Done!</div></div>
     </div>
-    <h2>Experiment <em>Reels</em></h2>
-  </div>
-  <p class="sec-sub rv">Tap any card — it opens the reel directly on Instagram.</p>
-
-  <div class="ig-grid">
-
-    <a class="ig-card rv"
-       href="https://www.instagram.com/reel/DaYi8Oau7Xu/"
-       target="_blank" rel="noopener">
-      <div class="ig-thumb">
-        <div class="ig-ph"><div class="ic">📱</div><div class="lb">Tap to watch on Instagram</div></div>
-        <div class="ig-ov"><div class="ig-play">▶</div><div class="ig-play-lb">Open Reel</div></div>
-        <div class="ig-badge">📱 Reel</div>
-      </div>
-      <div class="ig-info">
-        <div class="ig-title">Experiment Reel 1 — Update This Title</div>
-        <div class="ig-cta">Watch on Instagram →</div>
-      </div>
-    </a>
-
-    <a class="ig-card rv d1" href="PASTE_INSTAGRAM_REEL_LINK" target="_blank" rel="noopener">
-      <div class="ig-thumb">
-        <div class="ig-ph"><div class="ic">🔬</div><div class="lb">Tap to watch on Instagram</div></div>
-        <div class="ig-ov"><div class="ig-play">▶</div><div class="ig-play-lb">Open Reel</div></div>
-        <div class="ig-badge">📱 Reel</div>
-      </div>
-      <div class="ig-info">
-        <div class="ig-title">Experiment Reel 2 — Update This Title</div>
-        <div class="ig-cta">Watch on Instagram →</div>
-      </div>
-    </a>
-
-    <a class="ig-card rv d2" href="PASTE_INSTAGRAM_REEL_LINK" target="_blank" rel="noopener">
-      <div class="ig-thumb">
-        <div class="ig-ph"><div class="ic">⚡</div><div class="lb">Tap to watch on Instagram</div></div>
-        <div class="ig-ov"><div class="ig-play">▶</div><div class="ig-play-lb">Open Reel</div></div>
-        <div class="ig-badge">📱 Reel</div>
-      </div>
-      <div class="ig-info">
-        <div class="ig-title">Experiment Reel 3 — Update This Title</div>
-        <div class="ig-cta">Watch on Instagram →</div>
-      </div>
-    </a>
-
-  </div><!-- end ig-grid -->
-
-  <div class="follow-row rv">
-    <span>Follow for more:</span>
-    <a href="https://www.instagram.com/vertexeducation28/" target="_blank" rel="noopener"
-       class="fa-btn" style="background:linear-gradient(135deg,#833ab4,#fd1d1d);color:#fff;">
-      📱 @vertexeducation28
-    </a>
-    <a href="https://www.instagram.com/snehasen___/" target="_blank" rel="noopener"
-       class="fa-btn" style="border:1px solid rgba(225,48,108,.3);color:rgba(255,255,255,.7);">
-      @snehasen___
-    </a>
-    <a href="https://www.instagram.com/amanpipariya/" target="_blank" rel="noopener"
-       class="fa-btn" style="border:1px solid rgba(225,48,108,.3);color:rgba(255,255,255,.7);">
-      @amanpipariya
-    </a>
   </div>
 
+  <!-- STATS -->
+  <div class="ex-stats rv">
+    <div class="es"><div class="es-n">24+</div><div class="es-l">Experiment Videos</div></div>
+    <div class="es"><div class="es-n">4</div><div class="es-l">Subjects</div></div>
+    <div class="es"><div class="es-n">Free</div><div class="es-l">For All Students</div></div>
+    <div class="es"><div class="es-n">📱</div><div class="es-l">Any Device</div></div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filter-bar rv">
+    <button class="fp on" onclick="setFilter('all',this,'sub')">All</button>
+    <button class="fp" onclick="setFilter('physics',this,'sub')">⚡ Physics</button>
+    <button class="fp" onclick="setFilter('chemistry',this,'sub')">🧪 Chemistry</button>
+    <button class="fp" onclick="setFilter('biology',this,'sub')">🔬 Biology</button>
+    <button class="fp" onclick="setFilter('maths',this,'sub')">📐 Maths</button>
+  </div>
+
+  <!-- VIDEO GRID -->
+  <!-- HOW TO UPDATE: Replace dQw4w9WgXcQ with your YouTube Video ID everywhere below -->
+  <div class="vgrid">
+
+    <!-- PHYSICS -->
+    <div class="vc rv" data-sub="physics">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Ohm's Law Experiment" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div>
+          <div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(79,142,247,.1);color:var(--blue)">⚡ Physics</div>
+        <div class="v-title">Ohm's Law — Verification Experiment</div>
+        <div class="v-desc">Step-by-step demo verifying Ohm's Law using resistors, ammeter and voltmeter. Class 10 CBSE/GSEB.</div>
+        <div class="v-meta"><span>📚 Class 10</span><span>🎓 CBSE · GSEB</span><span>⏱ 8 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d1" data-sub="physics">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Refraction of Light" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(79,142,247,.1);color:var(--blue)">⚡ Physics</div>
+        <div class="v-title">Refraction of Light Through a Glass Slab</div>
+        <div class="v-desc">Light bending through glass — angles, emergent ray, lateral displacement explained visually.</div>
+        <div class="v-meta"><span>📚 Class 10</span><span>🎓 CBSE · ICSE</span><span>⏱ 10 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d2" data-sub="physics">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Magnetic Field Lines" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(79,142,247,.1);color:var(--blue)">⚡ Physics</div>
+        <div class="v-title">Magnetic Field Lines Using Iron Filings</div>
+        <div class="v-desc">Hands-on demo of magnetic field patterns around bar magnets using iron filing sprinkles.</div>
+        <div class="v-meta"><span>📚 Class 9–10</span><span>🎓 All Boards</span><span>⏱ 6 min</span></div>
+      </div>
+    </div>
+
+    <!-- CHEMISTRY -->
+    <div class="vc rv" data-sub="chemistry">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Acid Base Reaction" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(34,197,94,.08);color:var(--grn)">🧪 Chemistry</div>
+        <div class="v-title">Acid-Base Neutralization Reaction</div>
+        <div class="v-desc">HCl and NaOH neutralization with phenolphthalein indicator — pH colour change explained live.</div>
+        <div class="v-meta"><span>📚 Class 10–11</span><span>🎓 CBSE · GSEB</span><span>⏱ 9 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d1" data-sub="chemistry">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Electrolysis of Water" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(34,197,94,.08);color:var(--grn)">🧪 Chemistry</div>
+        <div class="v-title">Electrolysis of Water</div>
+        <div class="v-desc">Breaking water into H₂ and O₂ using electrolysis. Gas collection at anode and cathode shown live.</div>
+        <div class="v-meta"><span>📚 Class 9–10</span><span>🎓 All Boards</span><span>⏱ 7 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d2" data-sub="chemistry">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Paper Chromatography" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(34,197,94,.08);color:var(--grn)">🧪 Chemistry</div>
+        <div class="v-title">Paper Chromatography of Ink</div>
+        <div class="v-desc">Separation of ink components — beautiful visual demo of Rf values and pigment separation.</div>
+        <div class="v-meta"><span>📚 Class 11</span><span>🎓 CBSE · ICSE</span><span>⏱ 11 min</span></div>
+      </div>
+    </div>
+
+    <!-- BIOLOGY -->
+    <div class="vc rv" data-sub="biology">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Osmosis Experiment" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(168,85,247,.08);color:#a855f7">🔬 Biology</div>
+        <div class="v-title">Osmosis Through a Potato Slice</div>
+        <div class="v-desc">Classic osmosis using potato in salt and plain water. Turgidity and plasmolysis shown visually.</div>
+        <div class="v-meta"><span>📚 Class 9–10</span><span>🎓 All Boards</span><span>⏱ 8 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d1" data-sub="biology">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Photosynthesis Starch Test" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(168,85,247,.08);color:#a855f7">🔬 Biology</div>
+        <div class="v-title">Photosynthesis — Starch Test on Leaves</div>
+        <div class="v-desc">Iodine test on variegated leaves to prove photosynthesis needs chlorophyll and sunlight.</div>
+        <div class="v-meta"><span>📚 Class 10</span><span>🎓 CBSE · GSEB</span><span>⏱ 10 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d2" data-sub="biology">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Onion Cell Microscope" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(168,85,247,.08);color:#a855f7">🔬 Biology</div>
+        <div class="v-title">Observing Onion Cells Under Microscope</div>
+        <div class="v-desc">Preparing a temporary slide of onion peel — cell wall and nucleus clearly visible under scope.</div>
+        <div class="v-meta"><span>📚 Class 9</span><span>🎓 All Boards</span><span>⏱ 7 min</span></div>
+      </div>
+    </div>
+
+    <!-- MATHS -->
+    <div class="vc rv" data-sub="maths">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Pythagoras Proof" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(244,180,0,.1);color:var(--gold)">📐 Maths</div>
+        <div class="v-title">Pythagoras Theorem — Visual Proof</div>
+        <div class="v-desc">Beautiful visual proof using cut-out squares and rearrangement — makes the theorem unforgettable.</div>
+        <div class="v-meta"><span>📚 Class 9–10</span><span>🎓 All Boards</span><span>⏱ 6 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d1" data-sub="maths">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Trigonometry Activity" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(244,180,0,.1);color:var(--gold)">📐 Maths</div>
+        <div class="v-title">Trigonometry Ratios — Activity Model</div>
+        <div class="v-desc">Physical model demonstrating sin, cos, tan using rotating arm on a unit circle. Highly visual.</div>
+        <div class="v-meta"><span>📚 Class 10</span><span>🎓 All Boards</span><span>⏱ 9 min</span></div>
+      </div>
+    </div>
+
+    <div class="vc rv d2" data-sub="maths">
+      <div class="vthumb">
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Probability Experiment" loading="lazy"/>
+        <div class="play" onclick="openLb('dQw4w9WgXcQ')">
+          <div class="play-btn">▶</div><div class="play-lbl">Click to Play</div>
+        </div>
+      </div>
+      <div class="vinfo">
+        <div class="v-stag" style="background:rgba(244,180,0,.1);color:var(--gold)">📐 Maths</div>
+        <div class="v-title">Probability — 100 Coin Toss Experiment</div>
+        <div class="v-desc">Live coin toss activity proving experimental vs theoretical probability with real data.</div>
+        <div class="v-meta"><span>📚 Class 10</span><span>🎓 All Boards</span><span>⏱ 7 min</span></div>
+      </div>
+    </div>
+
+  </div><!-- end vgrid -->
+
+  <div style="text-align:center;margin-top:3.5rem" class="rv">
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.2rem">Want your child to learn through activities like these every day?</p>
+    <a href="contact.html" class="btn-p">Book a Free Demo Class →</a>
+  </div>
 </section>
 
-<hr class="sdiv"/>
-
-<!-- ══════════════════════════════════════════
-     SECTION 2 — YOUTUBE VIDEOS
-     Auto-generated below from videos-data.js.
-     TO ADD A NEW VIDEO: open videos-data.js,
-     copy a line, paste your title + link, save,
-     then git add . / commit / push like usual.
-     Nothing in THIS file needs to change.
-     ══════════════════════════════════════════ -->
-<section class="sec" id="youtube">
-
-  <div class="sec-top rv">
-    <div class="platform-pill" style="background:#ff0000;color:#fff;">
-      ▶ YouTube
-    </div>
-    <h2>Full <em>Videos</em></h2>
-  </div>
-  <p class="sec-sub rv">Tap any card — it opens the full video on YouTube.</p>
-
-  <div class="yt-grid" id="ytGrid">
-    <!-- Cards are generated automatically by the script below -->
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
+  <div class="ft-glow"></div>
   <div class="ft-grid">
-    <div class="ft-brand">
-      <div style="display:flex;align-items:center;gap:.5rem;font-size:.98rem;font-weight:700">
-        <div style="width:25px;height:25px;border-radius:6px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        Vertex <span style="color:#F4B400">Education</span>
-      </div>
-      <p>Best coaching in Chandkheda, Ahmedabad. CBSE, GSEB, ICSE, JEE &amp; NEET since 2014.</p>
-      <div class="addr">G-17, Omkar Lotus, Motera Road,<br>Chandkheda, Ahmedabad 382424</div>
-    </div>
-    <div class="ft-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="batches.html">Batches</a></li><li><a href="experiments.html">Experiments</a></li><li><a href="programs.html">Programs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="ft-col"><h4>Watch</h4><ul><li><a href="#instagram">Instagram Reels</a></li><li><a href="#youtube">YouTube Videos</a></li><li><a href="https://www.instagram.com/vertexeducation28/" target="_blank">@vertexeducation28</a></li><li><a href="https://www.instagram.com/snehasen___/" target="_blank">@snehasen___</a></li><li><a href="https://www.instagram.com/amanpipariya/" target="_blank">@amanpipariya</a></li></ul></div>
+    <div class="ft-brand"><div style="display:flex;align-items:center;gap:.5rem;font-size:.98rem;font-weight:700"><div style="width:25px;height:25px;border-radius:6px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Vertex <span style="color:var(--gold)">Education</span></div><p>Best coaching in Chandkheda, Ahmedabad. CBSE, GSEB, ICSE, JEE &amp; NEET since 2014.</p><div class="addr">G-17, Omkar Lotus, Motera Road,<br>Chandkheda, Ahmedabad 382424</div></div>
+    <div class="ft-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="notes.html">Notes</a></li><li><a href="experiments.html">Experiments</a></li><li><a href="programs.html">Programs</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Subjects</h4><ul><li><a href="#" onclick="setFilter('physics',null,'sub')">Physics</a></li><li><a href="#" onclick="setFilter('chemistry',null,'sub')">Chemistry</a></li><li><a href="#" onclick="setFilter('biology',null,'sub')">Biology</a></li><li><a href="#" onclick="setFilter('maths',null,'sub')">Mathematics</a></li></ul></div>
     <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:+919000000000">+91 90000 00000</a></li><li><a href="mailto:info@vertexeducation.in">Email Us</a></li><li><a href="https://wa.me/919000000000" target="_blank">WhatsApp</a></li></ul></div>
   </div>
-  <div class="ft-bot">
-    <span>© 2024 Vertex Education · Chandkheda, Ahmedabad</span>
-    <div class="srow"><a href="#" class="soc">f</a><a href="#" class="soc">in</a><a href="#" class="soc">▶</a><a href="#" class="soc">𝕏</a></div>
-  </div>
+  <div class="ft-bot"><span>© 2024 Vertex Education · Chandkheda, Ahmedabad</span><div class="srow"><a href="#" class="soc">f</a><a href="#" class="soc">in</a><a href="#" class="soc">▶</a><a href="#" class="soc">𝕏</a></div></div>
 </footer>
 
-<script src="videos-data.js"></script>
+<script src="shared.js"></script>
 <script>
-const _c=document.getElementById('cur'),_r=document.getElementById('cur-r');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;_c.style.left=mx+'px';_c.style.top=my+'px';});
-(function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;_r.style.left=rx+'px';_r.style.top=ry+'px';requestAnimationFrame(ar);})();
-window.addEventListener('scroll',()=>{
-  const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
-  document.getElementById('spb').style.width=p+'%';
-  document.getElementById('nav').classList.toggle('s',window.scrollY>60);
-  document.getElementById('btt').classList.toggle('sh',window.scrollY>300);
-});
-const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:.08});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-document.querySelector('.ph').querySelectorAll('.rv').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),i*80+100));
-const bg=document.getElementById('bg'),nl=document.getElementById('nl'),nr=document.getElementById('nr');
-bg?.addEventListener('click',()=>{bg.classList.toggle('o');nl.classList.toggle('o');nr?.classList.toggle('o');});
-nl?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{bg.classList.remove('o');nl.classList.remove('o');nr?.classList.remove('o');}));
-
-/* ═══════════════════════════════════
-   BUILD YOUTUBE CARDS FROM videos-data.js
-   ═══════════════════════════════════ */
-function extractVideoId(url){
-  const shortsMatch = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
-  if(shortsMatch) return shortsMatch[1];
-  const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/);
-  if(watchMatch) return watchMatch[1];
-  const beMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
-  if(beMatch) return beMatch[1];
-  return null;
+function openLb(id){
+  document.getElementById('lbf').src=`https://www.youtube.com/embed/${id}?autoplay=1`;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
 }
-function renderYouTubeGrid(){
-  const grid = document.getElementById('ytGrid');
-  if(!grid || typeof youtubeVideos === 'undefined') return;
-  grid.innerHTML = youtubeVideos.map((v,i)=>{
-    const id = extractVideoId(v.url);
-    const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
-    const delay = i % 6;
-    return `
-    <a class="yt-card rv d${delay}" href="${v.url}" target="_blank" rel="noopener">
-      <div class="yt-thumb">
-        ${thumb ? `<img src="${thumb}" alt="${v.title}" loading="lazy"/>` : ''}
-        <div class="yt-ov"><div class="yt-play">▶</div><div class="yt-play-lb">Watch on YouTube</div></div>
-        <div class="yt-badge">▶ YouTube</div>
-      </div>
-      <div class="yt-info">
-        <div class="yt-title">${v.title}</div>
-        <div class="yt-cta">Watch on YouTube →</div>
-      </div>
-    </a>`;
-  }).join('');
-  grid.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+function closeLb(e){
+  if(!e||e.target===document.getElementById('lb')||e.currentTarget.classList?.contains('lb-x')){
+    document.getElementById('lbf').src='';
+    document.getElementById('lb').classList.remove('open');
+    document.body.style.overflow='';
+  }
 }
-renderYouTubeGrid();
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 </script>
 </body>
 </html>

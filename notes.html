@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Notes | Vertex Education – Chandkheda Ahmedabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* NOTES-SPECIFIC */
+.nt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;}
+@media(max-width:780px){.nt-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.nt-grid{grid-template-columns:1fr;}}
+.nt-card{background:var(--bg2);border:1px solid var(--bdr);border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .2s,transform .25s;}
+.nt-card:hover{border-color:var(--bdr2);transform:translateY(-4px);}
+.nt-ic{font-size:1.7rem;}
+.nt-t{font-weight:700;font-size:.95rem;}
+.nt-d{font-size:.8rem;color:var(--muted);line-height:1.6;}
+.nt-dl{font-size:.78rem;font-weight:700;color:var(--blue);margin-top:.3rem;display:inline-flex;align-items:center;gap:.3rem;}
+.nt-soon{border:1px dashed var(--bdr2);border-radius:20px;padding:3rem 2rem;text-align:center;color:var(--muted);font-size:.9rem;margin-top:2.5rem;}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+<a href="https://wa.me/919000000000" class="wa-fl" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="nav">
+  <a href="index.html" class="n-logo"><div class="lb"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><span>Vertex <span class="gd">Education</span></span></a>
+  <ul class="n-links" id="nl">
+    <li><a href="index.html">Home</a></li><li><a href="notes.html" class="act">Notes</a></li>
+    <li><a href="experiments.html">Experiments</a></li><li><a href="programs.html">Programs</a></li>
+    <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="n-r" id="nr"><a href="contact.html" class="btn-w">Enroll Now →</a></div>
+  <button class="burger" id="bg"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="ph">
+  <div class="ph-grid"></div><div class="ph-glow"></div>
+  <div class="ph-content">
+    <div class="pill rv"><div class="dot"></div>Free Study Material</div>
+    <h1 class="sh rv d1">Notes &amp; resources<br>for every <em>subject.</em></h1>
+    <p class="sp rv d2" style="margin-bottom:0">Chapter-wise notes, formula sheets, and practice papers — free for all Vertex Education students.</p>
+  </div>
+</div>
+
+<section class="sec">
+  <span class="ol rv">Coming Soon</span>
+  <h2 class="sh rv d1">We're organizing<br><em>the full library.</em></h2>
+  <p class="sp rv d2">Notes for each class, board and subject are being uploaded here. Check back soon, or ask your teacher directly for the latest material.</p>
+
+  <!-- TO ADD REAL NOTES:
+       Copy one .nt-card block below, update the title, description,
+       and set href to your uploaded PDF path, e.g. "notes/physics-class10-ch3.pdf" -->
+  <div class="nt-soon rv d3">📚 Notes will appear here once uploaded — this page is ready and waiting.</div>
+
+  <!-- Example card structure for later use:
+  <div class="nt-grid rv d3">
+    <div class="nt-card">
+      <div class="nt-ic">📐</div>
+      <div class="nt-t">Physics — Class 10, Chapter 3</div>
+      <div class="nt-d">Electromagnetic Induction — full chapter notes with solved examples.</div>
+      <a href="notes/physics-class10-ch3.pdf" class="nt-dl" target="_blank">Download PDF →</a>
+    </div>
+  </div>
+  -->
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-glow"></div>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.98rem;font-weight:700">
+        <div style="width:25px;height:25px;border-radius:6px;background:linear-gradient(135deg,#2563EB,#4F8EF7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        Vertex <span style="color:#F4B400">Education</span>
+      </div>
+      <p>Best coaching in Chandkheda, Ahmedabad. CBSE, GSEB, ICSE, JEE &amp; NEET since 2014.</p>
+      <div class="addr">G-17, Omkar Lotus, Motera Road,<br>Chandkheda, Ahmedabad 382424</div>
+    </div>
+    <div class="ft-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="notes.html">Notes</a></li><li><a href="experiments.html">Experiments</a></li><li><a href="programs.html">Programs</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Batches</h4><ul><li><a href="batches.html">CBSE Coaching</a></li><li><a href="batches.html">GSEB Coaching</a></li><li><a href="batches.html">ICSE Batches</a></li><li><a href="batches.html">JEE / NEET Prep</a></li></ul></div>
+    <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:+919000000000">+91 90000 00000</a></li><li><a href="mailto:info@vertexeducation.in">Email Us</a></li><li><a href="https://wa.me/919000000000" target="_blank">WhatsApp</a></li></ul></div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2024 Vertex Education · Chandkheda, Ahmedabad</span>
+    <div class="srow"><a href="#" class="soc">f</a><a href="#" class="soc">in</a><a href="#" class="soc">▶</a><a href="#" class="soc">𝕏</a></div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

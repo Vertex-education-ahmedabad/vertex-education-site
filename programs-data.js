@@ -3,7 +3,7 @@
    To add photos: put each image inside an
    "images" array below (path should point into
    your project's images/programs/ folder).
-   Tapping the card on the site will show ALL
+   Tapping the card on the site shows ALL
    images listed here for that program.
 
    To add a brand new event: copy one whole
@@ -16,9 +16,9 @@ const programsData = [
     icon: "🔬",
     color: "linear-gradient(135deg,#0d1a3a,#163580)",
     images: [
-       "images/programs/photo-1.jpeg",
-       "images/programs/photo-2.jpeg",
-       "images/programs/photo-3.jpeg",
+      "images/programs/photo-1.jpeg",
+      "images/programs/photo-2.jpeg",
+      "images/programs/photo-3.jpeg",
     ]
   },
   {
@@ -26,9 +26,9 @@ const programsData = [
     icon: "🧮",
     color: "linear-gradient(135deg,#1a1400,#4a3c00)",
     images: [
-       "images/programs/photo-3.1.jpeg",
-       "images/programs/photo-3.2.jpeg",
-       "images/programs/photo-3.3.jpeg",
+      "images/programs/photo-3.1.jpeg",
+      "images/programs/photo-3.2.jpeg",
+      "images/programs/photo-3.3.jpeg",
     ]
   },
   {
@@ -56,11 +56,11 @@ const programsData = [
     ]
   },
   {
-    title: "Plantation Drive",
-    icon: "🌱",
+    title: "Parent-Teacher Meetings",
+    icon: "👪",
     color: "linear-gradient(135deg,#001a0d,#0a3d1f)",
     images: [
-      // "images/programs/plantation-1.jpg",
+      // "images/programs/ptm-1.jpg",
     ]
   },
 ];
