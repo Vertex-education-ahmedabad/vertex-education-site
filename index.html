@@ -22,16 +22,9 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--w);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--w);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
-button,a{cursor:none;}
-
-/* CURSOR */
-#cur{position:fixed;z-index:9999;top:0;left:0;width:8px;height:8px;background:var(--w);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s var(--ease),height .2s var(--ease);mix-blend-mode:difference;}
-#cur-r{position:fixed;z-index:9998;top:0;left:0;width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:all .18s var(--ease);}
-body:has(a:hover) #cur,body:has(button:hover) #cur{width:18px;height:18px;}
-body:has(a:hover) #cur-r,body:has(button:hover) #cur-r{width:50px;height:50px;border-color:rgba(255,255,255,.08);}
 
 /* SCROLL BAR */
 #spb{position:fixed;top:0;left:0;height:1px;background:var(--w);z-index:999;width:0%;transition:width .04s linear;}
@@ -321,13 +314,36 @@ footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem
 
 /* ── EXPERIMENTS PREVIEW BADGE ── */
 .ac-lk{display:block;}
-.ac-lk .ac{cursor:pointer;}
+
+/* ── PROGRAMS GALLERY ── */
+.pg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;}
+@media(max-width:780px){.pg-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.pg-grid{grid-template-columns:1fr;}}
+.pg-card{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;border:1px solid var(--bdr);background:size:cover;background-position:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;transition:transform .25s var(--ease),border-color .22s;text-align:center;padding:1rem;}
+.pg-card:hover{transform:translateY(-5px);border-color:var(--bdr2);}
+.pg-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity .3s,transform .5s var(--ease);}
+.pg-card:hover img{opacity:.75;transform:scale(1.04);}
+.pg-ic{font-size:2.3rem;position:relative;z-index:1;}
+.pg-t{font-weight:700;font-size:.92rem;position:relative;z-index:1;}
+.pg-count{font-size:.7rem;color:rgba(255,255,255,.45);position:relative;z-index:1;font-weight:600;background:rgba(0,0,0,.35);border-radius:50px;padding:.18rem .65rem;}
+
+/* PROGRAMS LIGHTBOX MODAL */
+.pg-modal{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.92);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:4vh 4vw;}
+.pg-modal.open{display:flex;}
+.pg-modal-inner{width:min(1000px,100%);}
+.pg-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.3rem;position:sticky;top:0;background:rgba(0,0,0,.001);}
+.pg-modal-title{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;}
+.pg-modal-close{width:38px;height:38px;border-radius:50%;border:1px solid var(--bdr2);background:rgba(255,255,255,.06);color:var(--w);font-size:1rem;cursor:pointer;transition:background .2s;flex-shrink:0;}
+.pg-modal-close:hover{background:rgba(255,255,255,.14);}
+.pg-modal-body{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;}
+@media(max-width:700px){.pg-modal-body{grid-template-columns:1fr 1fr;}}
+@media(max-width:440px){.pg-modal-body{grid-template-columns:1fr;}}
+.pg-modal-body img{width:100%;border-radius:12px;object-fit:cover;aspect-ratio:1/1;border:1px solid var(--bdr);}
+.pg-modal-empty{color:var(--muted);font-size:.88rem;padding:2rem 0;}
 </style>
 </head>
 <body>
 
-<div id="cur"></div>
-<div id="cur-r"></div>
 <div id="spb"></div>
 
 <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20know%20more%20about%20Vertex%20Education." class="wa-fl" target="_blank" rel="noopener" aria-label="WhatsApp">
@@ -575,33 +591,28 @@ footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem
 
 <hr class="sep"/>
 
-<!-- PROGRAMS FEATURE -->
+<!-- PROGRAMS GALLERY
+     To add real photos: open programs-data.js, and inside any
+     program's "images" array add a path like "images/programs/science-fair-1.jpg".
+     Add as many image paths as you like per program — the lightbox
+     will show all of them. Save & push like usual, nothing here needs to change. -->
 <section class="sec blk" id="programs">
-  <div class="fsplit fl">
-    <div>
-      <span class="ol rv">Programs &amp; Activities</span>
-      <h2 class="sh rv d1">Learning that lives<br><em>beyond textbooks.</em></h2>
-      <p class="sp rv d2">Science fairs, concept activities, maths olympiad prep, career days, felicitation ceremonies — at Vertex, education is a rich experience, not just exam prep.</p>
-      <ul class="check-list rv d3">
-        <li><span style="color:var(--gold)">✦</span>Annual Science Fair with parent showcase</li>
-        <li><span style="color:var(--gold)">✦</span>Concept-through-activity sessions every month</li>
-        <li><span style="color:var(--gold)">✦</span>Career counseling day with industry experts</li>
-        <li><span style="color:var(--gold)">✦</span>Annual felicitation ceremony for achievers</li>
-        <li><span style="color:var(--gold)">✦</span>YouTube experiment video library (free access)</li>
-      </ul>
-      <a href="programs.html" class="btn-p rv d4">Learn About Programs →</a>
-    </div>
-    <div class="fv rv d2">
-      <div class="fv-glow"></div>
-      <div class="ag" style="position:relative;z-index:1">
-        <div class="ac"><div class="ac-ic">🔬</div><div class="ac-t">Science Fair</div><div class="ac-d">Annual showcase with working models and live demos for parents</div></div>
-        <div class="ac"><div class="ac-ic">🧮</div><div class="ac-t">Maths Olympiad</div><div class="ac-d">IMO &amp; NTSE prep workshops with speed-solving practice</div></div>
-        <div class="ac"><div class="ac-ic">🎖️</div><div class="ac-t">Felicitation</div><div class="ac-d">Annual ceremony celebrating every student's milestone</div></div>
-        <div class="ac"><div class="ac-ic">🗣️</div><div class="ac-t">Career Day</div><div class="ac-d">Guest experts guide Class 10–12 on streams and careers</div></div>
-      </div>
-    </div>
-  </div>
+  <span class="ol rv">Memories</span>
+  <h2 class="sh rv d1">Glimpses from our<br><em>programs &amp; events.</em></h2>
+  <p class="sp rv d2">Tap any card to see every photo from that event.</p>
+  <div class="pg-grid rv d3" id="pgGrid"><!-- cards generated by script --></div>
 </section>
+
+<!-- LIGHTBOX MODAL FOR PROGRAM PHOTOS -->
+<div class="pg-modal" id="pgModal">
+  <div class="pg-modal-inner">
+    <div class="pg-modal-head">
+      <div class="pg-modal-title" id="pgModalTitle"></div>
+      <button class="pg-modal-close" id="pgModalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="pg-modal-body" id="pgModalBody"></div>
+  </div>
+</div>
 
 <hr class="sep"/>
 
@@ -763,13 +774,8 @@ footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem
   </div>
 </footer>
 
+<script src="programs-data.js"></script>
 <script>
-/* CURSOR */
-const cur=document.getElementById('cur'),cr=document.getElementById('cur-r');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(ar);})();
-
 /* SCROLL */
 window.addEventListener('scroll',()=>{
   const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
@@ -838,6 +844,47 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
   });
 });
+
+/* ═══════════════════════════════════
+   BUILD PROGRAMS GALLERY FROM programs-data.js
+   ═══════════════════════════════════ */
+function renderProgramsGrid(){
+  const grid=document.getElementById('pgGrid');
+  if(!grid||typeof programsData==='undefined')return;
+  grid.innerHTML=programsData.map((p,i)=>{
+    const cover=p.images&&p.images.length?`<img src="${p.images[0]}" alt="${p.title}" loading="lazy"/>`:'';
+    return `
+    <button class="pg-card rv d${i%4}" style="background:${p.color||'linear-gradient(135deg,#141414,#1c1c1c)'}" data-idx="${i}">
+      ${cover}
+      <div class="pg-ic">${p.icon||'📷'}</div>
+      <div class="pg-t">${p.title}</div>
+      <div class="pg-count">${p.images?p.images.length:0} photo${p.images&&p.images.length===1?'':'s'}</div>
+    </button>`;
+  }).join('');
+  grid.querySelectorAll('.pg-card').forEach(el=>{
+    ro.observe(el);
+    el.addEventListener('click',()=>openProgramModal(+el.dataset.idx));
+  });
+}
+function openProgramModal(idx){
+  const p=programsData[idx];
+  document.getElementById('pgModalTitle').textContent=p.title;
+  const body=document.getElementById('pgModalBody');
+  if(p.images&&p.images.length){
+    body.innerHTML=p.images.map(src=>`<img src="${src}" alt="${p.title}" loading="lazy"/>`).join('');
+  }else{
+    body.innerHTML=`<div class="pg-modal-empty">Photos for this event are coming soon.</div>`;
+  }
+  document.getElementById('pgModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeProgramModal(){
+  document.getElementById('pgModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('pgModalClose')?.addEventListener('click',closeProgramModal);
+document.getElementById('pgModal')?.addEventListener('click',e=>{if(e.target.id==='pgModal')closeProgramModal();});
+renderProgramsGrid();
 </script>
 </body>
 </html>
