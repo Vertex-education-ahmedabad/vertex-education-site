@@ -300,7 +300,7 @@ function renderProgramsGrid(){
   grid.innerHTML=programsData.map((p,i)=>{
     const cover=p.images&&p.images.length?`<img src="${p.images[0]}" alt="${p.title}" loading="lazy"/>`:'';
     return `
-    <button class="pg-card rv d${i%4}" style="background:${p.color||'linear-gradient(135deg,#141414,#1c1c1c)'}" data-idx="${i}">
+    <button class="pg-card" style="background:${p.color||'linear-gradient(135deg,#141414,#1c1c1c)'}" data-idx="${i}">
       ${cover}
       <div class="pg-ic">${p.icon||'📷'}</div>
       <div class="pg-t">${p.title}</div>

@@ -196,7 +196,7 @@ function renderYouTubeGrid(){
     const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
     const delay = i % 4;
     return `
-    <a class="yt-card rv d${delay}" href="${v.url}" target="_blank" rel="noopener">
+    <a class="yt-card" href="${v.url}" target="_blank" rel="noopener">
       <div class="yt-thumb">
         ${thumb ? `<img src="${thumb}" alt="${v.title}" loading="lazy"/>` : ''}
         <div class="yt-ov"><div class="yt-play">▶</div><div class="yt-play-lb">Watch on YouTube</div></div>
