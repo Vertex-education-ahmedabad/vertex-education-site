@@ -79,20 +79,6 @@
   <button class="burger" id="bg"><span></span><span></span><span></span></button>
 </nav>
 
-<div class="ph">
-  <div class="ph-grid"></div><div class="ph-glow" style="left:20%"></div>
-  <div class="ph-content">
-    <div class="pill rv"><div class="dot"></div>Beyond the Classroom</div>
-    <h1 class="sh rv d1" style="font-size:clamp(2.2rem,5vw,4rem)">Programs &amp; activities<br>that make learning <em>memorable.</em></h1>
-    <p class="sp rv d2" style="margin-bottom:0">Science fairs, olympiad prep, career days, felicitation ceremonies — at Vertex, education is a rich experience, not just exam preparation.</p>
-  </div>
-</div>
-
-<div class="mq"><div class="mq-t">
-  <span class="mi">Science Fair <span class="md">✦</span></span><span class="mi">Maths Olympiad <span class="md">✦</span></span><span class="mi">Career Counseling Day <span class="md">✦</span></span><span class="mi">Felicitation Ceremony <span class="md">✦</span></span><span class="mi">Parent Meetings <span class="md">✦</span></span><span class="mi">Mock Test Series <span class="md">✦</span></span><span class="mi">Concept Activities <span class="md">✦</span></span><span class="mi">Study Trips <span class="md">✦</span></span>
-  <span class="mi">Science Fair <span class="md">✦</span></span><span class="mi">Maths Olympiad <span class="md">✦</span></span><span class="mi">Career Counseling Day <span class="md">✦</span></span><span class="mi">Felicitation Ceremony <span class="md">✦</span></span><span class="mi">Parent Meetings <span class="md">✦</span></span><span class="mi">Mock Test Series <span class="md">✦</span></span>
-</div></div>
-
 <!-- PROGRAMS PHOTO GALLERY
      To add photos: open programs-data.js, and inside any
      program's "images" array add a path like "images/programs/science-fair-1.jpg".
@@ -172,16 +158,31 @@ function renderProgramsGrid(){
   const grid=document.getElementById('pgGrid');
   if(!grid||typeof programsData==='undefined')return;
   grid.innerHTML=programsData.map((p,i)=>{
-    const cover=p.images&&p.images.length?`<img src="${p.images[0]}" alt="${p.title}" loading="lazy"/>`:'';
+    const cover=p.cover?`<img src="${p.cover}" alt="${p.title}" loading="lazy"/>`:(p.images&&p.images.length?`<img src="${p.images[0]}" alt="${p.title}" loading="lazy"/>`:'');
+    const badge=p.link
+      ? `<div class="pg-count">📱 View on Instagram</div>`
+      : `<div class="pg-count">${p.images?p.images.length:0} photo${p.images&&p.images.length===1?'':'s'}</div>`;
+    const tag=p.link ? `data-idx="${i}" data-link="1"` : `data-idx="${i}"`;
+    // If a program has a "link", it's a plain <a> straight to Instagram.
+    // Otherwise it's a <button> that opens the local photo lightbox.
+    if(p.link){
+      return `
+      <a class="pg-card" style="background:${p.color||'linear-gradient(135deg,#141414,#1c1c1c)'}" href="${p.link}" target="_blank" rel="noopener">
+        ${cover}
+        <div class="pg-ic">${p.icon||'📷'}</div>
+        <div class="pg-t">${p.title}</div>
+        ${badge}
+      </a>`;
+    }
     return `
     <button class="pg-card" style="background:${p.color||'linear-gradient(135deg,#141414,#1c1c1c)'}" data-idx="${i}">
       ${cover}
       <div class="pg-ic">${p.icon||'📷'}</div>
       <div class="pg-t">${p.title}</div>
-      <div class="pg-count">${p.images?p.images.length:0} photo${p.images&&p.images.length===1?'':'s'}</div>
+      ${badge}
     </button>`;
   }).join('');
-  grid.querySelectorAll('.pg-card').forEach(el=>el.addEventListener('click',()=>openProgramModal(+el.dataset.idx)));
+  grid.querySelectorAll('button.pg-card').forEach(el=>el.addEventListener('click',()=>openProgramModal(+el.dataset.idx)));
 }
 function openProgramModal(idx){
   const p=programsData[idx];
