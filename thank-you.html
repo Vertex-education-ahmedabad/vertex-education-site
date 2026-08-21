@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Thank You | Vertex Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.ty-wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 5vw;position:relative;overflow:hidden;}
+.ty-glow{position:absolute;top:-15%;left:50%;transform:translateX(-50%);width:700px;height:600px;background:radial-gradient(ellipse at center,rgba(34,197,94,.14) 0%,transparent 65%);pointer-events:none;}
+
+/* CHECKMARK ANIMATION */
+.ty-check-wrap{width:110px;height:110px;margin-bottom:2rem;position:relative;z-index:1;}
+.ty-circle{stroke-dasharray:300;stroke-dashoffset:300;animation:tyCircle .7s cubic-bezier(0.16,1,0.3,1) forwards;}
+.ty-tick{stroke-dasharray:60;stroke-dashoffset:60;animation:tyTick .45s cubic-bezier(0.16,1,0.3,1) .55s forwards;}
+@keyframes tyCircle{to{stroke-dashoffset:0;}}
+@keyframes tyTick{to{stroke-dashoffset:0;}}
+
+.ty-wrap h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:1rem;position:relative;z-index:1;opacity:0;animation:tyFade .6s ease .5s forwards;}
+.ty-wrap h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--grn);}
+.ty-wrap p{font-size:1rem;color:var(--off);max-width:480px;line-height:1.75;margin-bottom:2.2rem;position:relative;z-index:1;opacity:0;animation:tyFade .6s ease .7s forwards;}
+@keyframes tyFade{to{opacity:1;transform:translateY(0);}from{transform:translateY(10px);}}
+
+.ty-steps{display:flex;flex-direction:column;gap:.8rem;max-width:420px;width:100%;margin-bottom:2.2rem;position:relative;z-index:1;opacity:0;animation:tyFade .6s ease .85s forwards;}
+.ty-step{display:flex;align-items:center;gap:.8rem;background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;padding:.9rem 1.1rem;text-align:left;}
+.ty-step-n{width:26px;height:26px;border-radius:50%;background:rgba(34,197,94,.12);color:var(--grn);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0;}
+.ty-step-t{font-size:.85rem;color:var(--off);}
+
+.ty-btns{display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;opacity:0;animation:tyFade .6s ease 1s forwards;}
+
+/* CONFETTI */
+.ty-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.tc{position:absolute;top:-10px;border-radius:2px;animation:tcFall linear forwards;}
+@keyframes tcFall{to{transform:translateY(105vh) rotate(360deg);opacity:.2;}}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+<div class="ty-confetti" id="confetti"></div>
+
+<nav id="nav">
+  <a href="index.html" class="n-logo">
+    <div class="lb"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <span>Vertex <span class="gd">Education</span></span>
+  </a>
+  <ul class="n-links" id="nl">
+    <li><a href="index.html">Home</a></li><li><a href="notes.html">Notes</a></li>
+    <li><a href="experiments.html">Experiments</a></li><li><a href="programs.html">Programs</a></li>
+    <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="n-r" id="nr"><a href="contact.html" class="btn-w">Enroll Now →</a></div>
+  <button class="burger" id="bg"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="ty-wrap">
+  <div class="ty-glow"></div>
+
+  <div class="ty-check-wrap">
+    <svg viewBox="0 0 130 130" width="110" height="110">
+      <circle class="ty-circle" cx="65" cy="65" r="52" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+      <polyline class="ty-tick" points="40,67 58,85 92,45" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <h1>Thank you — <em>you're all set!</em></h1>
+  <p>Your enrollment inquiry has been received. Our team will reach out within 24 hours to schedule your free counseling session and demo class.</p>
+
+  <div class="ty-steps">
+    <div class="ty-step"><div class="ty-step-n">1</div><div class="ty-step-t">We're reviewing your details right now</div></div>
+    <div class="ty-step"><div class="ty-step-n">2</div><div class="ty-step-t">A counselor will call or WhatsApp you within 24 hours</div></div>
+    <div class="ty-step"><div class="ty-step-n">3</div><div class="ty-step-t">We'll schedule your free demo class at a time that works for you</div></div>
+  </div>
+
+  <div class="ty-btns">
+    <a href="https://wa.me/919000000000?text=Hi!%20I%20just%20submitted%20an%20enquiry%20on%20your%20website." target="_blank" rel="noopener" class="btn-p">Message us on WhatsApp →</a>
+    <a href="index.html" class="btn-o">Back to Home</a>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+/* Light confetti burst on load */
+const colors=['#F4B400','#4F8EF7','#22c55e','#ffffff'];
+const c=document.getElementById('confetti');
+for(let i=0;i<40;i++){
+  const el=document.createElement('div');el.className='tc';
+  const size=Math.random()*7+4;
+  el.style.cssText=`width:${size}px;height:${size*.4}px;left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*2+2.5}s;animation-delay:${Math.random()*.4}s;opacity:${Math.random()*.6+.4}`;
+  c.appendChild(el);
+}
+setTimeout(()=>c.remove(),5000);
+</script>
+</body>
+</html>
