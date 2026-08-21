@@ -20,4 +20,9 @@ const heroSlides = [
    "images/hero/hero 5.jpeg",
    "images/hero/hero 6.jpeg",
    "images/hero/hero 7.jpeg",
+   "images/hero/hero 8.jpeg",
+   "images/hero/hero 9.jpeg",
+   "images/hero/hero 10.jpeg",
+   "images/hero/hero 11.jpeg",
+   "images/hero/hero 12.jpeg",
 ];
