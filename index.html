@@ -635,12 +635,10 @@ footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem
   <div class="cw">
     <div class="fb rv">
       <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:1.4rem">📋 Student Enrollment Inquiry</h3>
-      <!-- TO SEND REAL EMAILS (free):
-           Change <form id="form"> to:
-           <form action="https://formsubmit.co/YOUR@EMAIL.com" method="POST">
-           Add inside form: <input type="hidden" name="_autoresponse" value="Thank you! Vertex Education will contact you within 24 hours.">
-           <input type="hidden" name="_subject" value="New Enrollment Inquiry - Vertex Education"> -->
-      <form id="form" novalidate>
+      <form id="form" action="https://formsubmit.co/vertexeducationahmedabad@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New Enrollment Inquiry - Vertex Education"/>
+        <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Vertex Education! We've received your inquiry and will contact you within 24 hours to schedule your free counseling session and demo class."/>
+        <input type="hidden" name="_captcha" value="false"/>
         <div class="fr">
           <div class="fg"><label>Student Name *</label><input type="text" name="student_name" placeholder="Full name" required/></div>
           <div class="fg"><label>Parent Name *</label><input type="text" name="parent_name" placeholder="Guardian name" required/></div>
@@ -783,22 +781,17 @@ function tf(btn){const item=btn.parentElement,was=item.classList.contains('op');
 /* BOARD CHIPS */
 function sb(el,val){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');document.getElementById('bv').value=val;}
 
-/* FORM */
-document.getElementById('form').addEventListener('submit',async function(e){
-  e.preventDefault();
-  const btn=document.getElementById('bt');
+/* FORM — validates first, then lets it actually submit to FormSubmit */
+document.getElementById('form').addEventListener('submit',function(e){
   if(!this.student_name.value.trim()||!this.phone.value.trim()||!document.getElementById('ag').checked){
-    alert('Please fill all required fields and agree to be contacted.');return;
+    e.preventDefault();
+    alert('Please fill all required fields and agree to be contacted.');
+    return;
   }
+  // Valid — let the browser submit normally to FormSubmit.
+  const btn=document.getElementById('bt');
   btn.textContent='Sending…';
   this.querySelector('.fsub').disabled=true;
-  await new Promise(r=>setTimeout(r,1400));
-  document.getElementById('sc').style.display='block';
-  document.getElementById('sc').scrollIntoView({behavior:'smooth',block:'nearest'});
-  btn.textContent='✓ Sent!';
-  const fsub=this.querySelector('.fsub');
-  fsub.style.background='rgba(34,197,94,.12)';
-  fsub.style.color='#22c55e';
 });
 
 /* SMOOTH ANCHOR SCROLL — only for same-page anchors, real page links pass through */

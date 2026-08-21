@@ -127,14 +127,10 @@
     <div class="fb rv">
       <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:1.4rem;letter-spacing:-.015em">📋 Student Enrollment Inquiry</h3>
 
-      <!-- EMAIL SETUP NOTE (remove before launch) -->
-      <div class="alert">
-        <strong>📧 To receive real emails:</strong> Change the form action to<br>
-        <code style="font-size:.78rem;color:var(--blue);background:rgba(79,142,247,.1);padding:.1rem .35rem;border-radius:4px">action="https://formsubmit.co/YOUR@EMAIL.com" method="POST"</code><br>
-        Then add: <code style="font-size:.78rem;color:var(--blue);background:rgba(79,142,247,.1);padding:.1rem .35rem;border-radius:4px">&lt;input type="hidden" name="_autoresponse" value="Thank you! Vertex Education will contact you within 24 hours."&gt;</code>
-      </div>
-
-      <form id="enrollForm" novalidate>
+      <form id="enrollForm" action="https://formsubmit.co/vertexeducationahmedabad@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New Enrollment Inquiry - Vertex Education"/>
+        <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Vertex Education! We've received your inquiry and will contact you within 24 hours to schedule your free counseling session and demo class."/>
+        <input type="hidden" name="_captcha" value="false"/>
         <div class="fr">
           <div class="fg"><label>Student Name <span class="req">*</span></label><input type="text" name="student_name" placeholder="Full name" required/></div>
           <div class="fg"><label>Parent / Guardian Name <span class="req">*</span></label><input type="text" name="parent_name" placeholder="Parent's name" required/></div>
@@ -255,20 +251,16 @@ function selBoard(el,val){
   el.classList.add('on');
   document.getElementById('boardVal').value=val;
 }
-document.getElementById('enrollForm').addEventListener('submit',async function(e){
-  e.preventDefault();
+document.getElementById('enrollForm').addEventListener('submit',function(e){
   const btn=document.getElementById('submitBtn');
   const txt=document.getElementById('btnTxt');
   if(!this.student_name.value.trim()||!this.phone.value.trim()||!this.email.value.trim()||!document.getElementById('agree').checked){
-    alert('Please fill all required fields and agree to be contacted.');return;
+    e.preventDefault();
+    alert('Please fill all required fields and agree to be contacted.');
+    return;
   }
+  // Valid — let the browser submit normally to FormSubmit.
   btn.disabled=true; txt.textContent='Sending…';
-  await new Promise(r=>setTimeout(r,1500));
-  document.getElementById('sucMsg').style.display='block';
-  document.getElementById('sucMsg').scrollIntoView({behavior:'smooth',block:'nearest'});
-  txt.textContent='✓ Sent Successfully!';
-  btn.style.background='rgba(34,197,94,.15)';
-  btn.style.color='var(--grn)';
 });
 </script>
 </body>
