@@ -208,7 +208,11 @@ nav.s{padding:.9rem 4vw;}
 .rs-track:hover{animation-play-state:paused;}
 .rc{width:185px;flex-shrink:0;background:var(--bg2);border:1px solid var(--bdr2);border-radius:16px;overflow:hidden;transition:transform .28s var(--ease),box-shadow .28s;}
 .rc:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.6);}
-.rc-top{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;}
+.rc-top{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;position:relative;overflow:hidden;}
+.rc-top img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.rc-top .rc-badge-ov{position:absolute;bottom:.5rem;left:.5rem;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);border-radius:8px;padding:.3rem .55rem;z-index:1;}
+.rc-top .rc-badge-ov .rc-pct{font-size:1.25rem;margin-bottom:0;}
+.rc-top .rc-badge-ov .rc-bd{opacity:.85;}
 .rc-pct{font-size:2.1rem;font-weight:900;letter-spacing:-.04em;}
 .rc-bd{font-size:.68rem;font-weight:700;opacity:.6;}
 .rc-bot{padding:.85rem 1rem;border-top:1px solid var(--bdr);}
@@ -403,30 +407,6 @@ footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem
   </h1>
 </section>
 
-<!-- MARQUEE -->
-<div class="mq-wrap">
-  <div class="mq-track">
-    <span class="mi"><span class="mb-tag">CBSE</span>Board Coaching<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">GSEB</span>Gujarati &amp; English Medium<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">ICSE</span>Dedicated Separate Batches<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">JEE</span>Main &amp; Advanced<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">NEET</span>PCB Preparation<span class="md">✦</span></span>
-    <span class="mi">Smart Board Classes<span class="md">✦</span></span>
-    <span class="mi">Max 20 Per Batch<span class="md">✦</span></span>
-    <span class="mi">Monthly Parent Meetings<span class="md">✦</span></span>
-    <span class="mi">Weekly Tests<span class="md">✦</span></span>
-    <span class="mi">Science Experiments<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">CBSE</span>Board Coaching<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">GSEB</span>Gujarati &amp; English Medium<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">ICSE</span>Dedicated Separate Batches<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">JEE</span>Main &amp; Advanced<span class="md">✦</span></span>
-    <span class="mi"><span class="mb-tag">NEET</span>PCB Preparation<span class="md">✦</span></span>
-    <span class="mi">Smart Board Classes<span class="md">✦</span></span>
-    <span class="mi">Max 20 Per Batch<span class="md">✦</span></span>
-    <span class="mi">Monthly Parent Meetings<span class="md">✦</span></span>
-  </div>
-</div>
-
 <!-- SMART BOARD FEATURE -->
 <section class="sec blk" id="courses">
   <div class="fsplit">
@@ -512,21 +492,7 @@ footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem
 
   <div class="rscroll rv d3" style="margin-top:2.5rem">
     <div class="rsfl"></div><div class="rsfr"></div>
-    <div class="rs-track">
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">96%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 12</div></div><div class="rc-bot"><div class="rc-nm">Ananya Sharma</div><div class="rc-cl">Science · PCM</div><div class="rc-bg">🏆 96.4%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a0f00,#4a2800)"><div class="rc-pct" style="color:#F4B400">JEE</div><div class="rc-bd" style="color:rgba(244,180,0,.65)">Main Qualified</div></div><div class="rc-bot"><div class="rc-nm">Rahul Patel</div><div class="rc-cl">PCM · JEE 2024</div><div class="rc-bg" style="color:#F4B400;background:rgba(244,180,0,.1)">🎯 92 %ile</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#001a0d,#004020)"><div class="rc-pct" style="color:#22c55e">94%</div><div class="rc-bd" style="color:rgba(34,197,94,.65)">GSEB · Std 10</div></div><div class="rc-bot"><div class="rc-nm">Dhruvi Shah</div><div class="rc-cl">Std 10 · GSEB</div><div class="rc-bg">🥇 94.2%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a002a,#400066)"><div class="rc-pct" style="color:#a855f7">NEET</div><div class="rc-bd" style="color:rgba(168,85,247,.65)">Qualified</div></div><div class="rc-bot"><div class="rc-nm">Priya Desai</div><div class="rc-cl">PCB · NEET 2024</div><div class="rc-bg" style="color:#a855f7;background:rgba(168,85,247,.1)">💊 570/720</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a0000,#4a0000)"><div class="rc-pct" style="color:#ef4444">98%</div><div class="rc-bd" style="color:rgba(239,68,68,.65)">ICSE · Class 10</div></div><div class="rc-bot"><div class="rc-nm">Arjun Mehta</div><div class="rc-cl">ICSE · Class 10</div><div class="rc-bg" style="color:#ef4444;background:rgba(239,68,68,.1)">⭐ 98.0%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">91%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 10</div></div><div class="rc-bot"><div class="rc-nm">Sneha Trivedi</div><div class="rc-cl">Class 10 · CBSE</div><div class="rc-bg">🎓 91.2%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#001a0d,#004020)"><div class="rc-pct" style="color:#22c55e">93%</div><div class="rc-bd" style="color:rgba(34,197,94,.65)">GSEB · Std 12</div></div><div class="rc-bot"><div class="rc-nm">Karan Solanki</div><div class="rc-cl">Std 12 · Science</div><div class="rc-bg">🔬 93.6%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a1400,#4a3c00)"><div class="rc-pct" style="color:#F4B400">JEE</div><div class="rc-bd" style="color:rgba(244,180,0,.65)">Advanced</div></div><div class="rc-bot"><div class="rc-nm">Veer Agarwal</div><div class="rc-cl">JEE Adv · 2024</div><div class="rc-bg" style="color:#F4B400;background:rgba(244,180,0,.1)">🚀 AIR 2840</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">97%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 12</div></div><div class="rc-bot"><div class="rc-nm">Pooja Verma</div><div class="rc-cl">Science · CBSE</div><div class="rc-bg">🌟 97.2%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#001a0d,#004020)"><div class="rc-pct" style="color:#22c55e">88%</div><div class="rc-bd" style="color:rgba(34,197,94,.65)">GSEB · Std 10</div></div><div class="rc-bot"><div class="rc-nm">Manan Thakkar</div><div class="rc-cl">Std 10 · GSEB</div><div class="rc-bg">📝 88.6%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a002a,#400066)"><div class="rc-pct" style="color:#a855f7">95%</div><div class="rc-bd" style="color:rgba(168,85,247,.65)">ICSE · Class 10</div></div><div class="rc-bot"><div class="rc-nm">Riya Kapoor</div><div class="rc-cl">ICSE · Class 10</div><div class="rc-bg" style="color:#a855f7;background:rgba(168,85,247,.1)">🎖 95.4%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#0d1a3a,#163580)"><div class="rc-pct" style="color:#4F8EF7">96%</div><div class="rc-bd" style="color:rgba(79,142,247,.65)">CBSE · Class 12</div></div><div class="rc-bot"><div class="rc-nm">Ananya Sharma</div><div class="rc-cl">Science · PCM</div><div class="rc-bg">🏆 96.4%</div></div></div>
-      <div class="rc"><div class="rc-top" style="background:linear-gradient(135deg,#1a0f00,#4a2800)"><div class="rc-pct" style="color:#F4B400">JEE</div><div class="rc-bd" style="color:rgba(244,180,0,.65)">Main Qualified</div></div><div class="rc-bot"><div class="rc-nm">Rahul Patel</div><div class="rc-cl">PCM · JEE 2024</div><div class="rc-bg" style="color:#F4B400;background:rgba(244,180,0,.1)">🎯 92 %ile</div></div></div>
-    </div>
+    <div class="rs-track" id="rsTrack"><!-- cards generated by script from results-data.js --></div>
   </div>
 </section>
 
@@ -720,6 +686,7 @@ footer{background:#000;border-top:1px solid var(--bdr);padding:4.5rem 5vw 2.5rem
 
 <script src="programs-data.js"></script>
 <script src="hero-slides.js"></script>
+<script src="results-data.js"></script>
 <script>
 /* SCROLL */
 window.addEventListener('scroll',()=>{
@@ -825,6 +792,36 @@ function renderHeroSlider(){
   dotEls.forEach(d=>d.addEventListener('click',()=>{show(+d.dataset.i);clearInterval(timer);startTimer();}));
 }
 renderHeroSlider();
+
+/* ═══════════════════════════════════
+   BUILD RESULTS ROW FROM results-data.js
+   No hardcoded limit — add as many students
+   as you like in that file.
+   ═══════════════════════════════════ */
+function renderResultsTrack(){
+  const track=document.getElementById('rsTrack');
+  if(!track||typeof resultsData==='undefined'||!resultsData.length)return;
+  const cardHTML=(s)=>{
+    const photo=s.photo?`<img src="${s.photo}" alt="${s.name}" loading="lazy"/>`:'';
+    const badgeInner=`<div class="rc-pct" style="color:${s.color||'#4F8EF7'}">${s.badgeTop||''}</div><div class="rc-bd" style="color:${s.color?s.color+'a6':'rgba(79,142,247,.65)'}">${s.badgeSub||''}</div>`;
+    return `
+    <div class="rc">
+      <div class="rc-top" style="background:${s.bgGradient||'linear-gradient(135deg,#0d1a3a,#163580)'}">
+        ${photo}
+        ${photo?`<div class="rc-badge-ov">${badgeInner}</div>`:badgeInner}
+      </div>
+      <div class="rc-bot">
+        <div class="rc-nm">${s.name}</div>
+        <div class="rc-cl">${s.subtitle||''}</div>
+        <div class="rc-bg"${s.badgeColor?` style="color:${s.badgeColor};background:${s.badgeColor}1a"`:''}>${s.resultTag||''}</div>
+      </div>
+    </div>`;
+  };
+  // Duplicate the list once so the CSS marquee animation loops seamlessly,
+  // regardless of how many students you've added.
+  track.innerHTML = resultsData.map(cardHTML).join('') + resultsData.map(cardHTML).join('');
+}
+renderResultsTrack();
 </script>
 </body>
 </html>
