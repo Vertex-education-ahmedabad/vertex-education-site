@@ -189,10 +189,9 @@ function renderReelsGrid(){
   const grid = document.getElementById('igGrid');
   if(!grid || typeof igReels === 'undefined') return;
   grid.innerHTML = igReels.map((r,i)=>{
-    const delay = i % 4;
     const cover = r.cover ? `<img src="${r.cover}" alt="${r.title}" loading="lazy"/>` : '';
     return `
-    <a class="ig-card rv d${delay}" href="${r.url}" target="_blank" rel="noopener">
+    <a class="ig-card" href="${r.url}" target="_blank" rel="noopener">
       <div class="ig-thumb">
         ${cover}
         <div class="ig-ph"><div class="ic">${r.icon||'📱'}</div><div class="lb">Tap to watch on Instagram</div></div>
